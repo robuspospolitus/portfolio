@@ -1,0 +1,15 @@
+.file{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.file:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
