@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import "./File.scss";
 
-export default function File({isGrid}:{isGrid: boolean}) {
+interface FileProps{
+    isGrid: boolean
+}
+
+const File: React.FC<FileProps> = ({isGrid}) => {
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
-    const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)` })
+    const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
     
     //offset of the mouse relative to the object
     const getOffset = (e:React.DragEvent) => {
@@ -19,16 +23,15 @@ export default function File({isGrid}:{isGrid: boolean}) {
          let x = e.clientX;
          let y = e.clientY;
          setxy(() =>[x,y]);
-         setStyleOfMovingFile({ transform: `translate(${(x-offset[0])}px, ${(y-offset[1])}px)` })
+         setStyleOfMovingFile({ transform: `translate(${(x-offset[0])}px, ${(y-offset[1])}px)`, opacity: `${isGrid ? '0':'1'}` })
     }
-    // also onDrag={(e) => handleGrad(e)} is mandatory for visibility
 
     // grid-like placement
     const finalPlace = (e:React.DragEvent) => {
         let x = Math.round((e.clientX-offset[0])/100)*100;
         let y = Math.round((e.clientY-offset[1])/100)*100;
         setxy(() =>[x,y]);
-        setStyleOfMovingFile({ transform: `translate(${x}px, ${y}px)` })
+        setStyleOfMovingFile({ transform: `translate(${x}px, ${y}px)`, opacity: '1' })
     }
 
     return(
@@ -39,9 +42,12 @@ export default function File({isGrid}:{isGrid: boolean}) {
             draggable="true" 
             onDragEnter={(e) => e.preventDefault()} 
             onDragOver={(e) => {e.dataTransfer.dropEffect = "move";e.preventDefault()}} 
-            onDragStart={(e) => getOffset(e)} 
+            onDragStart={(e) => {getOffset(e)}} 
+            onDrag={(e) => handleDrag(e)}
             onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}>
          </div>
         </>
     );
 }
+
+export default File;

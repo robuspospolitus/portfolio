@@ -6,6 +6,7 @@
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
+    pointer-events: auto;
 }
 
 .file:focus {

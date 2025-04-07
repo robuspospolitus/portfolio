@@ -4,10 +4,11 @@ import './Desktop.scss';
 
 function Desktop() {
   const[isGrid, setIsGrid] = useState<boolean>(true);
+  
   return (
     <>
-    <div className="main">
-      <File isGrid={isGrid}/>
+    <div className="main" >
+      <File  isGrid={isGrid} />
     </div>
     </>
   );
