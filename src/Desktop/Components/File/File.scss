@@ -8,8 +8,8 @@
     cursor: -webkit-grab;
 }
 
-.file:active {
-    cursor: grabbing;
+.file:focus {
+    cursor: grabbing !important;
     cursor: -moz-grabbing;
     cursor: -webkit-grabbing;
 }
