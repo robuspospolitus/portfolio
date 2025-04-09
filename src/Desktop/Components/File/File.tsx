@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ModalWindow from '../ModalWindow/ModalWindow';
 import "./File.scss";
 
 interface FileProps {
     id: number,
     isGrid: boolean,
     image: string,
-    title: string
+    title: string,
+    //setIsModalOpen: (x:string) => void;
 }
 
 
@@ -17,6 +19,9 @@ export default function File({isGrid, id, image, title}: FileProps){
     const drag = new Image(0,0);
     const divRef = useRef<HTMLDivElement>(null);
     drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+    //Modal window thingies
+    const[isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
@@ -52,24 +57,30 @@ export default function File({isGrid, id, image, title}: FileProps){
         setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${y}px)`, opacity: '1' })
     }
 
+    const handleOpenModalWindow = () => {
+        setIsModalOpen(true);
+    }
+
     return(
         <>
-         <div 
-            style={styleOfMovingFile} 
-            ref={divRef}
-            className={`file ${isActive ? "file-active":''}`} 
-            draggable="true" 
-            onClick={() => setActive(true)}
-            onBlur={() => setActive(false)}
-            onDragEnter={(e) => e.preventDefault()} 
-            onDragOver={(e) => {e.dataTransfer.dropEffect = "move";e.preventDefault()}} 
-            onDragStart={(e) => {setActive(true);e.dataTransfer.setDragImage(drag, 0, 0);getOffset(e)}} 
-            onDrag={(e) => handleDrag(e)}
-            onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}
-        >
-            <img src={image} alt={title}/>
-            <p className='title'>{title}</p>
-         </div>
+            <div 
+                style={styleOfMovingFile} 
+                ref={divRef}
+                className={`file ${isActive ? "file-active":''}`} 
+                draggable="true" 
+                onClick={() => setActive(true)}
+                onDoubleClick={() => handleOpenModalWindow()}
+                onBlur={() => setActive(false)}
+                onDragEnter={(e) => e.preventDefault()} 
+                onDragOver={(e) => {e.dataTransfer.dropEffect = "move";e.preventDefault()}} 
+                onDragStart={(e) => {setActive(true);e.dataTransfer.setDragImage(drag, 0, 0);getOffset(e)}} 
+                onDrag={(e) => handleDrag(e)}
+                onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}
+            >
+                <img src={image} alt={title}/>
+                <p className='title'>{title}</p>
+            </div>
+            <ModalWindow isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
         </>
     );
 }

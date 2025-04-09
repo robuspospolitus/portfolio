@@ -26,6 +26,7 @@ function Desktop() {
         <File isGrid={isGrid} id={file.id} image={file.image} title={file.title} key={file.id}/>
       ))}
       
+      
     </div>
     </>
   );
