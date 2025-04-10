@@ -15,7 +15,7 @@
     z-index: 1;
 
     img{
-        height: 70px;
+        height: 60px;
         object-fit: contain;
         padding: 5px;
     }
@@ -24,14 +24,12 @@
         color: white;
         margin: 0;
         padding: 0;
-        line-height: 15px;
+        line-height: 20px;
         text-align: center;
         text-shadow: 1px 1px 1.5px black;
     }
 }
 .file-active {
-    border: 2px solid rgba(191, 182, 247, 0.438);
-    border-radius: 10px;
     box-sizing: border-box;
     background-color: rgba(191, 182, 247, 0.089);
     z-index: 2;

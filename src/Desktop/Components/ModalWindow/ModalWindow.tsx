@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './ModalWindow.scss';
+import './../../../variables.scss';
 
 interface modalData {
     isOpen: boolean,
@@ -33,7 +34,7 @@ export default function ModalWindow({isOpen, setIsOpen}: modalData) {
 
     return(
         <div 
-            className="modal-window" 
+            className="modal-window pixel-corners" 
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
             draggable="true"
             onDragEnter={(e) => e.preventDefault()} 
@@ -43,9 +44,9 @@ export default function ModalWindow({isOpen, setIsOpen}: modalData) {
             onDragEnd={(e) => {handleDrag(e)}}
         >
             <div className="mw-nav-bar">
-                <button className='mw-nb-close' onClick={() => handleClose()}/>
+                <button className='mw-nb-close pixel-buttons' onClick={() => handleClose()}/>
             </div>
-            <div className="mw-content">
+            <div className="mw-content pixel-corners">
 
             </div>
         </div>

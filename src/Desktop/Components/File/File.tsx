@@ -66,7 +66,7 @@ export default function File({isGrid, id, image, title}: FileProps){
             <div 
                 style={styleOfMovingFile} 
                 ref={divRef}
-                className={`file ${isActive ? "file-active":''}`} 
+                className={`file ${isActive ? "file-active pixel-icons":''}`} 
                 draggable="true" 
                 onClick={() => setActive(true)}
                 onDoubleClick={() => handleOpenModalWindow()}
