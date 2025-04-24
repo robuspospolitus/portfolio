@@ -10,10 +10,10 @@
     justify-content: center;
     flex-direction: column;
 
-    .mw-nav-bar{
+    .mw-navbar{
         width: 100%;
         height: 27px;
-        padding-top: 2px;
+        padding-top: 4px;
         .mw-nb-close {
             height: 25px;
             width: 45px;
@@ -26,10 +26,13 @@
     }
     .mw-content {
         margin-left: 3.2px;
+        margin-top: 2.5px;
         width: 490px;
         height: 260px;
         background-color: rgba(255, 255, 255, 0.9);
-        border: 2px solid rgba(255, 179, 213, 0.8);
         box-sizing: border-box;
+        display: flex;
+        padding: 10px;
+        
     }
 }

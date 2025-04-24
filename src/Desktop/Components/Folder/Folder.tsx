@@ -1,19 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import "./File.scss";
+import "./Folder.scss";
 
-interface FileProps {
+type Content = {
     id: number,
-    isGrid: boolean,
+    type: string,
+    source: string,
+    title: string,
+    content?: Content[]
+}
+type Data = {
+    id: number,
     image: string,
     title: string,
+    content: Array<Content>
+}
+interface FileProps {
+    data: Data,
+    isGrid: boolean,
     //setIsModalOpen: (x:string) => void;
 }
 
 
-export default function File({isGrid, id, image, title}: FileProps){
+export default function Folder({data, isGrid}: FileProps){
     const[offset, setOffset] = useState<Array<number>>([0,0])
-    const[xy, setxy] = useState<Array<number>>([0,(100*id-100)])
+    const[xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
     const[isActive, setActive] = useState<boolean>(false);
     const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
     const drag = new Image(0,0);
@@ -66,7 +77,7 @@ export default function File({isGrid, id, image, title}: FileProps){
             <div 
                 style={styleOfMovingFile} 
                 ref={divRef}
-                className={`file ${isActive ? "file-active pixel-icons":''}`} 
+                className={`folder ${isActive ? "folder-active pixel-icons":''}`} 
                 draggable="true" 
                 onClick={() => setActive(true)}
                 onDoubleClick={() => handleOpenModalWindow()}
@@ -77,10 +88,10 @@ export default function File({isGrid, id, image, title}: FileProps){
                 onDrag={(e) => handleDrag(e)}
                 onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}
             >
-                <img src={image} alt={title}/>
-                <p className='title'>{title}</p>
+                <img src={data.image} alt={data.title}/>
+                <p className='title'>{data.title}</p>
             </div>
-            <ModalWindow isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
+            <ModalWindow isOpen={isModalOpen} setIsOpen={setIsModalOpen} content={data.content}/>
         </>
     );
 }

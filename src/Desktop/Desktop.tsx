@@ -1,18 +1,49 @@
 import React, { useState } from 'react';
-import File from './Components/File/File';
+import Folder from './Components/Folder/Folder';
 import './Desktop.scss';
 
 
-const fileData = [
+const folderData = [
   {
     id: 1,
     title: "Pscółka",
-    image: "images/bzz.png"
+    image: "images/bzz.png",
+    content: [
+      {
+        id: 1,
+        type: "folder",
+        source: "images/bzz.png",
+        title: "eo",
+        content: []
+      },
+      {
+        id: 2,
+        type: "image",
+        source: "images/bzz.png",
+        title: "zdjecie :>",
+        content: []
+      },
+      {
+        id: 3,
+        type: "image",
+        source: "images/bzz.png",
+        title: "zdjecie 2aaa :>",
+        content: []
+      },
+      {
+        id: 4,
+        type: "image",
+        source: "images/bzz.png",
+        title: "zdjecie 3 >:)",
+        content: []
+      },
+    ]
   },
   {
     id: 2,
     title: "Pscółkaa",
-    image: "images/bzz.png"
+    image: "images/bzz.png",
+    content: []
   },
 ];
 
@@ -22,8 +53,8 @@ function Desktop() {
   return (
     <>
     <div className="main" >
-      {fileData.map((file) => (
-        <File isGrid={isGrid} id={file.id} image={file.image} title={file.title} key={file.id}/>
+      {folderData.map((folder) => (
+        <Folder isGrid={isGrid} data={folder} key={folder.id}/>
       ))}
       
       

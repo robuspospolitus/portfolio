@@ -1,9 +1,9 @@
 .file{
-    position: absolute;
     width: 100px;
     max-width: 100px;
     height: 100px;
     max-height: 100px;
+    margin: 10px;
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
@@ -15,33 +15,23 @@
     z-index: 1;
 
     img{
+        user-select: none !important;
         height: 60px;
         object-fit: contain;
         padding: 5px;
     }
     .title{
         font-size: 15px;
-        color: white;
+        color: black;
         margin: 0;
         padding: 0;
         line-height: 20px;
         text-align: center;
-        text-shadow: 1px 1px 1.5px black;
+        text-shadow: 0px 0px 0px black;
     }
 }
 .file-active {
     box-sizing: border-box;
     background-color: rgba(191, 182, 247, 0.089);
     z-index: 2;
-    img{
-        background-color: rgba(191, 182, 247, 0.089);
-    }
-    .title{
-        background-color: rgba(191, 182, 247, 0.089);
-    }
-}
-.file:focus {
-    cursor: grabbing !important;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
 }
