@@ -43,6 +43,7 @@ export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
         setIsOpen(() => false);
     }
 
+
     return(
         <div 
             className="modal-window pixel-corners" 
@@ -62,9 +63,15 @@ export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
             <div className="mw-content pixel-corners">
                 {content.map((file) => (
                     <>
-                        <File id={file.id} type={file.type} source={file.source} title={file.title} content={file.content}/>
+                        <File id={file.id} type={file.type} source={file.source} title={file.title} content={file.content} key={file.id}/>
                     </>
                 ))}
+                {content.length === 0  && 
+                    <div className='folder-not-available'>
+                        <img src='images/octopus_sad.png' alt=':('/>
+                        <p className='empty-folder'>There is no available content right now :(</p>
+                    </div>
+                }
             </div>
         </div>
     );

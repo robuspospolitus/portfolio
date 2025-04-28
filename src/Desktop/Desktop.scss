@@ -1,4 +1,16 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url('../Assets/Fonts/medodica.regular.eot'); /* IE9 Compat Modes */
+  src: url('../Assets/Fonts/medodica.regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../Assets/Fonts/medodica.regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../Assets/Fonts/medodica.regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../Assets/Fonts/medodica.regular.ttf')  format('truetype');/* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
+  font-family: 'PixelFont', sans-serif;
   margin: 0;
   user-select: none !important;
 }
