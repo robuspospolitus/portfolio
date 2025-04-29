@@ -16,8 +16,20 @@
 }
 
 body {
-  background-color: #64A2D8;
+  
   overflow: hidden;
+}
+
+.background{
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  image-rendering: pixelated;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
 }
 
 

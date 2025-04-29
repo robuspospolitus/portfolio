@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Folder from './Components/Folder/Folder';
 import './Desktop.scss';
+import Background from '../Assets/Images/background.jpg';
 
 
 const folderData = [
@@ -52,6 +53,7 @@ function Desktop() {
   
   return (
     <>
+    <img className='background' src={Background} alt=''/>
     <div className="main" >
       {folderData.map((folder) => (
         <Folder isGrid={isGrid} data={folder} key={folder.id}/>
