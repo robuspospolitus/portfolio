@@ -7,14 +7,14 @@ import Background from '../Assets/Images/background2.jpg';
 const folderData = [
   {
     id: 1,
-    title: "Pscółka",
+    title: "Pscólka",
     image: "images/bzz.png",
     content: [
       {
         id: 1,
         type: "folder",
         source: "images/bzz.png",
-        title: "eo",
+        title: "folder",
         content: []
       },
       {
@@ -28,7 +28,7 @@ const folderData = [
         id: 3,
         type: "image",
         source: "images/bzz.png",
-        title: "zdjecie 2aaa :>",
+        title: "zdjecie 2 :>",
         content: []
       },
       {
@@ -38,11 +38,18 @@ const folderData = [
         title: "zdjecie 3 >:)",
         content: []
       },
+      {
+        id: 5,
+        type: "image",
+        source: "images/bzz.png",
+        title: "przyklad row",
+        content: []
+      },
     ]
   },
   {
     id: 2,
-    title: "Pscółkaa",
+    title: "Pscólkaa",
     image: "images/bzz.png",
     content: []
   },

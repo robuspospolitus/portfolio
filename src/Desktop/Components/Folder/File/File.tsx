@@ -29,12 +29,13 @@ export default function File({id, type, source, title, content}: FileProps){
     const drag = new Image(0,0);
     drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-
+    const style = id < 5 ? {translate: `${(id-1)*110}px 0px`} : {translate: `${(id-5)*100}px 110px`};
 
     return(
         <>
             <div 
                 ref={divRef}
+                style={style}
                 className={`file ${isActive ? "file-active pixel-icons":""}`} 
                 onClick={() => setActive(true)}
                 onBlur={() => setActive(false)}
