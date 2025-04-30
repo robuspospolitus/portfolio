@@ -26,6 +26,8 @@ body {
   width: 100vw;
   height: 100vh;
   image-rendering: pixelated;
+  object-position: 50% 50%;
+  object-fit: cover;
 }
 .main {
   width: 100vw;

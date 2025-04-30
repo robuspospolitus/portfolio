@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Folder from './Components/Folder/Folder';
 import './Desktop.scss';
-import Background from '../Assets/Images/background.jpg';
+import Background from '../Assets/Images/background2.jpg';
 
 
 const folderData = [

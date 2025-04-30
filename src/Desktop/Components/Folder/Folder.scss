@@ -31,13 +31,13 @@
 }
 .folder-active {
     box-sizing: border-box;
-    background-color: rgba(191, 182, 247, 0.089);
+    background-color: rgba(224, 224, 224, 0.3);
     z-index: 2;
     img{
-        background-color: rgba(191, 182, 247, 0.089);
+        background-color: rgba(224, 224, 224, 0.2);
     }
     .title{
-        background-color: rgba(191, 182, 247, 0.089);
+        background-color: rgba(224, 224, 224, 0.2);
     }
 }
 .folder:focus {
