@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Folder from './Components/Folder/Folder';
+import File from './Components/File/File';
 import './Desktop.scss';
 import Background from '../Assets/Images/background2.jpg';
 
@@ -7,8 +7,9 @@ import Background from '../Assets/Images/background2.jpg';
 const folderData = [
   {
     id: 1,
+    type: 'folder',
+    source: "images/bzz.png",
     title: "Pscólka",
-    image: "images/bzz.png",
     content: [
       {
         id: 1,
@@ -49,11 +50,22 @@ const folderData = [
   },
   {
     id: 2,
+    type: 'folder',
     title: "Pscólkaa",
-    image: "images/bzz.png",
+    source: "images/bzz.png",
     content: []
   },
 ];
+
+const fileData = [
+  {
+    id: 1,
+    type: "folder",
+    source: "images/bzz.png",
+    title: "folder",
+    content: []
+  }
+]
 
 function Desktop() {
   const[isGrid, setIsGrid] = useState<boolean>(true);
@@ -61,9 +73,9 @@ function Desktop() {
   return (
     <>
     <img className='background' src={Background} alt=''/>
-    <div className="main" >
+    <div id="main" >
       {folderData.map((folder) => (
-        <Folder isGrid={isGrid} data={folder} key={folder.id}/>
+        <File isGrid={isGrid} isInFolder={false} data={folder} key={folder.id}/>
       ))}
       
       

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import "./Folder.scss";
+import "./File.scss";
 
 type Content = {
     id: number,
@@ -11,22 +11,32 @@ type Content = {
 }
 type Data = {
     id: number,
-    image: string,
+    type: string,
+    source: string,
     title: string,
-    content: Array<Content>
+    content?: Array<Content>
 }
 interface FileProps {
     data: Data,
     isGrid: boolean,
+    isInFolder: boolean,
     //setIsModalOpen: (x:string) => void;
 }
 
 
-export default function Folder({data, isGrid}: FileProps){
+export default function File({data, isGrid, isInFolder}: FileProps){
+    const inFolderStyle = data.id < 5 ? [(data.id-1)*110, 0] : [(data.id-5)*100, 110];
+    
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
     const[isActive, setActive] = useState<boolean>(false);
+
+    //Moving on the desktop
     const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
+    //Moving in the folder
+    const[styleOfFolderFile,setStyleOfFolderFile] = useState({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
+    
+    //no img while dragging
     const drag = new Image(0,0);
     const divRef = useRef<HTMLDivElement>(null);
     drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
@@ -34,10 +44,11 @@ export default function Folder({data, isGrid}: FileProps){
     //Modal window thingies
     const[isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
           if (divRef.current && !divRef.current.contains(e.target as Node)) {
-            setActive(false); // kliknięcie poza boxem
+            setActive(false); // click outside the box
           }
         };
     document.addEventListener('mousedown', handleClick);
@@ -75,9 +86,9 @@ export default function Folder({data, isGrid}: FileProps){
     return(
         <>
             <div 
-                style={styleOfMovingFile} 
+                style={isInFolder ? styleOfFolderFile : styleOfMovingFile} 
                 ref={divRef}
-                className={`folder ${isActive ? "folder-active pixel-icons":''}`} 
+                className={`file ${isActive ? "file-active pixel-icons":''}`} 
                 draggable="true" 
                 onClick={() => setActive(true)}
                 onDoubleClick={() => handleOpenModalWindow()}
@@ -88,10 +99,12 @@ export default function Folder({data, isGrid}: FileProps){
                 onDrag={(e) => handleDrag(e)}
                 onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}
             >
-                <img src={data.image} alt={data.title}/>
+                <img src={data.source} alt={data.title}/>
                 <p className='title'>{data.title}</p>
             </div>
-            <ModalWindow isOpen={isModalOpen} setIsOpen={setIsModalOpen} content={data.content}/>
+            {data.content && data.type === 'folder' &&
+                <ModalWindow isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content}/>
+            }
         </>
     );
 }

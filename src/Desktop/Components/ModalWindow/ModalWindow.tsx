@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import ReactDOM from "react-dom";
+import { useState, useEffect } from 'react';
 import './ModalWindow.scss';
-import File from '../Folder/File/File';
+import File from '../File/File';
 import './../../../variables.scss';
 
 type Content = {
@@ -13,14 +14,25 @@ type Content = {
 interface modalData {
     isOpen: boolean,
     content: Array<Content>,
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    isInFolder: boolean,
 }
 
 
-export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
+export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: modalData) {
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
     const[styleOfMovingFile,setStyleOfMovingFile] = useState(`translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`)
+
+    // Modal is not set visually inside the element
+    // Instead appears inside 'main' div
+    const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
+    useEffect(() => {
+        const root = document.getElementById("main");
+        setModalRoot(root);
+    }, []);
+    if (!modalRoot) return null;
+
 
     const getOffset = (e:React.DragEvent) => {
         let offsetX = e.nativeEvent.offsetX;
@@ -44,7 +56,7 @@ export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
     }
 
 
-    return(
+    return ReactDOM.createPortal(
         <div 
             className="modal-window pixel-corners" 
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
@@ -63,7 +75,7 @@ export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
             <div className="mw-content pixel-corners">
                 {content.map((file) => (
                     <>
-                        <File id={file.id} type={file.type} source={file.source} title={file.title} content={file.content} key={file.id}/>
+                        <File data={file} isGrid={true} isInFolder={true} key={file.id}/>
                     </>
                 ))}
                 {content.length === 0  && 
@@ -73,6 +85,7 @@ export default function ModalWindow({isOpen, setIsOpen, content}: modalData) {
                     </div>
                 }
             </div>
-        </div>
+        </div>,
+        modalRoot
     );
 }
