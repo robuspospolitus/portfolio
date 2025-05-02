@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './ModalWindow.scss';
 import File from '../File/File';
 import './../../../variables.scss';
@@ -20,16 +20,27 @@ interface modalData {
 
 
 export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: modalData) {
+    const[isActive, setActive] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
     const[styleOfMovingFile,setStyleOfMovingFile] = useState(`translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`)
+    const divRef = useRef<HTMLDivElement>(null);
 
     // Modal is not set visually inside the element
     // Instead appears inside 'main' div
     const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
+    
+
     useEffect(() => {
         const root = document.getElementById("main");
         setModalRoot(root);
+        const handleClick = (e: MouseEvent) => {
+            if (divRef.current && !divRef.current.contains(e.target as Node)) {
+            setActive(false); // click outside the box
+            }
+        };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
     }, []);
     if (!modalRoot) return null;
 
@@ -55,16 +66,19 @@ export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: mo
         setIsOpen(() => false);
     }
 
-
+    console.log(isActive);
     return ReactDOM.createPortal(
         <div 
-            className="modal-window pixel-corners" 
+            className={`modal-window pixel-corners ${isActive ? "modal-window-active":''}`}
+            ref={divRef}
+            onClick={() => setActive(true)}
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
             
         >
             <div className="mw-navbar"
             draggable="true"
-            onDragEnter={(e) => e.preventDefault()} 
+            onClick={() => setActive(true)}
+            onDragEnter={(e) => {e.preventDefault();setActive(true)}} 
             onDragOver={(e) => {e.dataTransfer.dropEffect = "move";e.preventDefault()}} 
             onDragStart={(e) => {getOffset(e);e.dataTransfer.setDragImage(drag, 0, 0);}} 
             onDrag={(e) => handleDrag(e)}
@@ -72,7 +86,7 @@ export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: mo
             >
                 <button className='mw-nb-close pixel-buttons' onClick={() => handleClose()}/>
             </div>
-            <div className="mw-content pixel-corners">
+            <div className="mw-content pixel-corners" onClick={() => setActive(true)}>
                 {content.map((file) => (
                     <>
                         <File data={file} isGrid={true} isInFolder={true} key={file.id}/>
