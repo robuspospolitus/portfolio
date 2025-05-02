@@ -75,8 +75,26 @@ export default function File({data, isGrid, isInFolder}: FileProps){
     const finalPlace = (e:React.DragEvent) => {
         let x = Math.round((e.clientX-offset[0])/100)*100;
         let y = Math.round((e.clientY-offset[1])/100)*100;
-        setxy(() =>[x,y]);
-        setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${y}px)`, opacity: '1' })
+        if(x > -100 && y > -100){
+            setxy(() =>[x,y]);
+            setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${y}px)`, opacity: '1' })
+
+        }
+        else{
+            if(x <= -100 && y > -100){
+                setxy(() =>[0,y]);
+                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${0}px, ${y}px)`, opacity: '1' })
+            }
+            else if(y <= -100 && x > -100){
+                setxy(() =>[x,0]);
+                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${0}px)`, opacity: '1' })
+            }
+            else{
+                setxy(() =>[0,0]);
+                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${0}px, ${0}px)`, opacity: '1' })
+            
+            }
+        }
     }
 
     const handleOpenModalWindow = () => {
