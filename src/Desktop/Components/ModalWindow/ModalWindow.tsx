@@ -12,6 +12,7 @@ type Content = {
     content?: Content[]
 }
 interface modalData {
+    id: number,
     isOpen: boolean,
     content: Array<Content>,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
@@ -19,7 +20,7 @@ interface modalData {
 }
 
 
-export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: modalData) {
+export default function ModalWindow({id, isOpen, setIsOpen, isInFolder, content}: modalData) {
     const[isActive, setActive] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
@@ -66,14 +67,13 @@ export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: mo
         setIsOpen(() => false);
     }
 
-    console.log(isActive);
     return ReactDOM.createPortal(
         <div 
             className={`modal-window pixel-corners ${isActive ? "modal-window-active":''}`}
             ref={divRef}
             onClick={() => setActive(true)}
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
-            
+            key={id}
         >
             <div className="mw-navbar"
             draggable="true"
@@ -86,10 +86,10 @@ export default function ModalWindow({isOpen, setIsOpen, isInFolder, content}: mo
             >
                 <button className='mw-nb-close pixel-buttons' onClick={() => handleClose()}/>
             </div>
-            <div className="mw-content pixel-corners" onClick={() => setActive(true)}>
-                {content.map((file) => (
+            <div className="mw-content pixel-corners" onClick={() => setActive(true)} key={id}>
+                {content.map((file, key) => (
                     <>
-                        <File data={file} isGrid={true} isInFolder={true} key={file.id}/>
+                        <File data={file} isGrid={true} isInFolder={true} key={key}/>
                     </>
                 ))}
                 {content.length === 0  && 

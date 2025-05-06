@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import "./File.scss";
+import useWindowDimensions from '../../Functions/WindowDimensions';
 
 type Content = {
     id: number,
@@ -30,6 +31,8 @@ export default function File({data, isGrid, isInFolder}: FileProps){
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
     const[isActive, setActive] = useState<boolean>(false);
+    const[isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const { height, width } = useWindowDimensions();
 
     //Moving on the desktop
     const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
@@ -41,10 +44,7 @@ export default function File({data, isGrid, isInFolder}: FileProps){
     const divRef = useRef<HTMLDivElement>(null);
     drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-    //Modal window thingies
-    const[isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
-
+    
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
           if (divRef.current && !divRef.current.contains(e.target as Node)) {
@@ -75,26 +75,19 @@ export default function File({data, isGrid, isInFolder}: FileProps){
     const finalPlace = (e:React.DragEvent) => {
         let x = Math.round((e.clientX-offset[0])/100)*100;
         let y = Math.round((e.clientY-offset[1])/100)*100;
-        if(x > -100 && y > -100){
-            setxy(() =>[x,y]);
-            setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${y}px)`, opacity: '1' })
+        let xwidth = Math.floor((width)/100)*100; 
+        let yheight = Math.floor((height)/100)*100; 
 
-        }
-        else{
-            if(x <= -100 && y > -100){
-                setxy(() =>[0,y]);
-                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${0}px, ${y}px)`, opacity: '1' })
-            }
-            else if(y <= -100 && x > -100){
-                setxy(() =>[x,0]);
-                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${x}px, ${0}px)`, opacity: '1' })
-            }
-            else{
-                setxy(() =>[0,0]);
-                setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${0}px, ${0}px)`, opacity: '1' })
-            
-            }
-        }
+        let newX = Math.max(0, Math.min(x, xwidth - 100));
+        let newY = Math.max(0, Math.min(y, yheight - 100));
+
+        setxy(() => [newX, newY]);
+        setStyleOfMovingFile({
+        ...styleOfMovingFile,
+        transform: `translate(${newX}px, ${newY}px)`,
+        opacity: '1',
+        });
+        
     }
 
     const handleOpenModalWindow = () => {
@@ -121,7 +114,7 @@ export default function File({data, isGrid, isInFolder}: FileProps){
                 <p className='title'>{data.title}</p>
             </div>
             {data.content && data.type === 'folder' &&
-                <ModalWindow isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content}/>
+                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content}/>
             }
         </>
     );
