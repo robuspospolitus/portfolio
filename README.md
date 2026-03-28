@@ -1,5 +1,7 @@
 # Portfolio
 
+THIS PROJECT IS NOT FINISHED YET
+
 follow me :> [github](https://github.com/robuspospolitus).
 
 ## Fresh experience
