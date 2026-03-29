@@ -24,20 +24,19 @@ interface FileProps {
     //setIsModalOpen: (x:string) => void;
 }
 
-
 export default function File({data, isGrid, isInFolder}: FileProps){
     const inFolderStyle = data.id < 5 ? [(data.id-1)*110, 0] : [(data.id-5)*100, 110];
     
-    const[offset, setOffset] = useState<Array<number>>([0,0])
-    const[xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
-    const[isActive, setActive] = useState<boolean>(false);
-    const[isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [offset, setOffset] = useState<Array<number>>([0,0])
+    const [xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
+    const [isActive, setActive] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const { height, width } = useWindowDimensions();
 
     //Moving on the desktop
-    const[styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
+    const [styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
     //Moving in the folder
-    const[styleOfFolderFile,setStyleOfFolderFile] = useState({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
+    const [styleOfFolderFile] = useState({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
     
     //no img while dragging
     const drag = new Image(0,0);

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import File from './Components/File/File';
 import './Desktop.scss';
-import Background from '../Assets/Images/background2.jpg';
+import Background from '../Assets/Images/image.png';
 import data from '../Assets/Data/data.json';
 
 
 const folderData = data.files;
 
 function Desktop() {
-  const[isGrid, setIsGrid] = useState<boolean>(true);
+  const [isGrid] = useState<boolean>(true);
   
   return (
     <>
@@ -17,8 +17,6 @@ function Desktop() {
       {folderData.map((folder) => (
         <File isGrid={isGrid} isInFolder={false} data={folder} key={folder.id}/>
       ))}
-      
-      
     </div>
     </>
   );

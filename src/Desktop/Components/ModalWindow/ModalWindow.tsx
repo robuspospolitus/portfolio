@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from 'react';
 import './ModalWindow.scss';
 import File from '../File/File';
-import './../../../variables.scss';
+import './../../../styles/pixel-corners.scss';
 
 type Content = {
     id: number,
@@ -19,8 +19,8 @@ interface modalData {
     isInFolder: boolean,
 }
 
-
-export default function ModalWindow({id, isOpen, setIsOpen, isInFolder, content}: modalData) {
+// isInFolder??
+export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData) {
     const[isActive, setActive] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
