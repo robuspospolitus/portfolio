@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import './ModalWindow.scss';
 import File from '../File/File';
 import './../../../styles/pixel-corners.scss';
@@ -9,18 +9,21 @@ type Content = {
     type: string,
     source: string,
     title: string,
-    content?: Content[]
+    content?: Content[],
+    photo?: string,
 }
-interface modalData {
+interface modalProps {
     id: number,
     isOpen: boolean,
-    content: Array<Content>,
+    content?: Array<Content>,
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
     isInFolder: boolean,
+    type: string,
+    photo?: string,
 }
 
 // isInFolder??
-export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData) {
+export default function ModalWindow({id, isOpen, setIsOpen, content, photo, type}: modalProps) {
     const[isActive, setActive] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
@@ -30,7 +33,6 @@ export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData)
     // Modal is not set visually inside the element
     // Instead appears inside 'main' div
     const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
-    
 
     useEffect(() => {
         const root = document.getElementById("main");
@@ -67,9 +69,10 @@ export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData)
         setIsOpen(() => false);
     }
 
-    return ReactDOM.createPortal(
+    // CreatePortal is so the modal is not set inside the parent as in modalRoot
+    return createPortal(
         <div 
-            className={`modal-window pixel-corners ${isActive ? "modal-window-active":''}`}
+            className={`modal-window pixel-corners ${isActive ? "modal-window-active":''} ${type==="image" && "modal-photo"}`}
             ref={divRef}
             onClick={() => setActive(true)}
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
@@ -87,15 +90,19 @@ export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData)
                 <button className='mw-nb-close pixel-buttons' onClick={() => handleClose()}/>
             </div>
             <div className="mw-content pixel-corners" onClick={() => setActive(true)} key={id}>
-                {content.map((file, key) => (
-                    <File data={file} isGrid={true} isInFolder={true} key={key}/>
-                ))}
-                {content.length === 0  && 
-                    <div className='folder-not-available'>
-                        <img src='images/octopus_sad.png' alt=':('/>
-                        <p className='empty-folder'>There is no available content right now :(</p>
-                    </div>
-                }
+            {
+                type === "folder" && content &&(
+                content.length > 0 ? 
+                    (   content.map((file, index) => ( <File key={index} data={file} isGrid isInFolder /> ))) 
+                    : 
+                    (
+                        <div className="folder-not-available">
+                            <img src="images/octopus_sad.png" alt=":(" onContextMenu={(e) => e.preventDefault()} />
+                            <p className="empty-folder"> There is no available content right now :( </p>
+                        </div> 
+                    )
+            )}
+            { type === "image" && photo && <img className='pixel-corners' src={photo} alt='photo' onContextMenu={e => {e.preventDefault()}}/> }
             </div>
         </div>,
         modalRoot

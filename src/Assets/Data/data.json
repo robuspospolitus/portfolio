@@ -18,28 +18,25 @@
           "type": "image",
           "source": "images/photo.png",
           "title": "zdjecie :>",
-          "content": []
+          "photo": "images/example.png"
         },
         {
           "id": 3,
           "type": "image",
           "source": "images/photo.png",
-          "title": "zdjecie 2 :>",
-          "content": []
+          "title": "zdjecie 2 :>"
         },
         {
           "id": 4,
           "type": "image",
           "source": "images/photo.png",
-          "title": "zdjecie 3 >:)",
-          "content": []
+          "title": "zdjecie 3 >:)"
         },
         {
           "id": 5,
           "type": "image",
           "source": "images/photo.png",
-          "title": "przyklad row",
-          "content": []
+          "title": "przyklad row"
         }
       ]
     },

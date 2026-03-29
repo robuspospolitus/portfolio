@@ -4,7 +4,6 @@ import './Desktop.scss';
 import Background from '../Assets/Images/image.png';
 import data from '../Assets/Data/data.json';
 
-
 const folderData = data.files;
 
 function Desktop() {
@@ -12,7 +11,7 @@ function Desktop() {
   
   return (
     <>
-    <img className='background' src={Background} alt=''/>
+    <img className='background' src={Background} alt='background' onContextMenu={e => {e.preventDefault()}}/>
     <div id="main" >
       {folderData.map((folder) => (
         <File isGrid={isGrid} isInFolder={false} data={folder} key={folder.id}/>

@@ -8,20 +8,14 @@ type Content = {
     type: string,
     source: string,
     title: string,
+    photo?: string,
     content?: Content[]
 }
-type Data = {
-    id: number,
-    type: string,
-    source: string,
-    title: string,
-    content?: Array<Content>
-}
+
 interface FileProps {
-    data: Data,
+    data: Content,
     isGrid: boolean,
-    isInFolder: boolean,
-    //setIsModalOpen: (x:string) => void;
+    isInFolder: boolean
 }
 
 export default function File({data, isGrid, isInFolder}: FileProps){
@@ -43,7 +37,6 @@ export default function File({data, isGrid, isInFolder}: FileProps){
     const divRef = useRef<HTMLDivElement>(null);
     drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-    
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
           if (divRef.current && !divRef.current.contains(e.target as Node)) {
@@ -109,11 +102,14 @@ export default function File({data, isGrid, isInFolder}: FileProps){
                 onDrag={(e) => handleDrag(e)}
                 onDragEnd={(e) => {isGrid ? finalPlace(e) : handleDrag(e)}}
             >
-                <img src={data.source} alt={data.title}/>
+                <img src={data.source} alt={data.title} onContextMenu={e => {e.preventDefault()}} />
                 <p className='title'>{data.title}</p>
             </div>
-            {data.content && data.type === 'folder' &&
-                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content}/>
+            {data.content ?
+                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content} type={data.type}/>
+            : data.photo ?
+                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} photo={data.photo} type={data.type}/>
+            : <></>
             }
         </>
     );

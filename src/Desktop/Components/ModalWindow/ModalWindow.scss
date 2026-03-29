@@ -59,6 +59,18 @@
         }
     }
 }
+.modal-photo {
+    height: auto;
+    .mw-content {
+        min-height: 100px;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        img {
+            width: 100%;
+        }
+    }
+}
 
 .modal-window-active {
     z-index: 4;
