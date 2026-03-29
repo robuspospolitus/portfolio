@@ -16,7 +16,6 @@
 }
 
 body {
-  
   overflow: hidden;
 }
 
@@ -28,6 +27,7 @@ body {
   image-rendering: pixelated;
   object-position: 50% 50%;
   object-fit: cover;
+  filter: brightness(var(--background-brightness)) grayscale(var(--background-grayscale));
 }
 #main {
   width: 100vw;

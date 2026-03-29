@@ -1,4 +1,4 @@
-.file{
+.file {
     position: absolute;
     width: 100px;
     max-width: 100px;
@@ -12,22 +12,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
     z-index: 1;
-
     box-sizing: border-box;
-    border: 4px solid rgba(0, 0, 0, 0);
-
-    img{
+    img {
         user-select: none !important;
         height: 60px;
         max-height: 60px;
         object-fit: contain;
         padding: 5px;
     }
-    .title{
-        font-size: 15px;
-        max-height: 15px;
+    .title {
+        font-size: var(--item-font-size);
+        max-height: var(--item-font-size);
         color: white;
         margin: 0;
         padding: 0;
@@ -38,14 +35,8 @@
 }
 .file-active {
     box-sizing: border-box;
-    background-color: rgba(224, 224, 224, 0.3);
+    background-color: var(--file-active-background-color);
     z-index: 2;
-    img{
-        background-color: rgba(224, 224, 224, 0.2);
-    }
-    .title{
-        background-color: rgba(224, 224, 224, 0.2);
-    }
 }
 .file:focus {
     cursor: grabbing !important;

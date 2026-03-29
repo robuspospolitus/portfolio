@@ -1,0 +1,14 @@
+:root {
+    --item-font-size: 16px;
+    --item-in-modal-font-size: 18px;
+}
+
+.light-theme {
+    --item-color: #fff;
+    --modal-color: rgba(219, 213, 255, 0.9);
+    --modal-background-color: rgba(255, 255, 255, 0.9);
+    --background-brightness: 90%;
+    --background-grayscale: 20%;
+    --file-active-background-color: rgba(224, 224, 224, 0.4);
+    --file-active-title-color: black;
+}

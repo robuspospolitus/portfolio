@@ -88,9 +88,7 @@ export default function ModalWindow({id, isOpen, setIsOpen, content}: modalData)
             </div>
             <div className="mw-content pixel-corners" onClick={() => setActive(true)} key={id}>
                 {content.map((file, key) => (
-                    <>
-                        <File data={file} isGrid={true} isInFolder={true} key={key}/>
-                    </>
+                    <File data={file} isGrid={true} isInFolder={true} key={key}/>
                 ))}
                 {content.length === 0  && 
                     <div className='folder-not-available'>
