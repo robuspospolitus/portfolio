@@ -4,46 +4,70 @@
       "id": 1,
       "type": "folder",
       "source": "images/folder.png",
-      "title": "Pscólka",
+      "title": "Projects",
       "content": [
         {
           "id": 1,
           "type": "folder",
           "source": "images/folder.png",
-          "title": "folder",
+          "title": "Flower Grove",
           "content": []
         },
         {
           "id": 2,
-          "type": "image",
-          "source": "images/photo.png",
-          "title": "zdjecie :>",
-          "photo": "images/example.png"
+          "type": "folder",
+          "source": "images/folder.png",
+          "title": "Girly Time Tracker",
+          "content": []
         },
         {
           "id": 3,
-          "type": "image",
-          "source": "images/photo.png",
-          "title": "zdjecie 2 :>"
+          "type": "folder",
+          "source": "images/folder.png",
+          "title": "Cocktail Browser",
+          "content": []
         },
         {
           "id": 4,
-          "type": "image",
-          "source": "images/photo.png",
-          "title": "zdjecie 3 >:)"
+          "type": "folder",
+          "source": "images/folder.png",
+          "title": "Better Timer",
+          "content": []
         },
         {
           "id": 5,
-          "type": "image",
-          "source": "images/photo.png",
-          "title": "przyklad row"
+          "type": "folder",
+          "source": "images/folder.png",
+          "title": "Portfolio",
+          "content": []
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "source": "images/doc.png",
+          "title": "Future ideas",
+          "text": [
+            "Future ideas",
+            "1. Minesweeper",
+            "web game, responsive design, timer, themes",
+            "2. Gardening clicker",
+            "Points, growing plants, fertilizers",
+            "3. Real-time mobile chat",
+            "Using capacitor, themes, sending pictures itd.",
+            "4. 3D UI design website",
+            "3D design showcase",
+            "5. Solar system",
+            "3D showcase",
+            "6. Drawing app",
+            "-"
+          ]
         }
       ]
     },
     {
       "id": 2,
       "type": "folder",
-      "title": "Pscólkaa",
+      "title": "Meszka",
       "source": "images/folder.png",
       "content": []
     }

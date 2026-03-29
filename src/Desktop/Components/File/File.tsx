@@ -10,6 +10,7 @@ type Content = {
     title: string,
     photo?: string,
     content?: Content[]
+    text?: string[],
 }
 
 interface FileProps {
@@ -109,7 +110,10 @@ export default function File({data, isGrid, isInFolder}: FileProps){
                 <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content} type={data.type}/>
             : data.photo ?
                 <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} photo={data.photo} type={data.type}/>
-            : <></>
+            : data.text ?
+                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} text={data.text} type={data.type}/>
+            :
+                <></>
             }
         </>
     );

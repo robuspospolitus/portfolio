@@ -11,6 +11,7 @@ type Content = {
     title: string,
     content?: Content[],
     photo?: string,
+    text?: string[],
 }
 interface modalProps {
     id: number,
@@ -20,10 +21,11 @@ interface modalProps {
     isInFolder: boolean,
     type: string,
     photo?: string,
+    text?: string[],
 }
 
 // isInFolder??
-export default function ModalWindow({id, isOpen, setIsOpen, content, photo, type}: modalProps) {
+export default function ModalWindow({id, isOpen, setIsOpen, content, photo, text, type}: modalProps) {
     const[isActive, setActive] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
@@ -103,6 +105,15 @@ export default function ModalWindow({id, isOpen, setIsOpen, content, photo, type
                     )
             )}
             { type === "image" && photo && <img className='pixel-corners' src={photo} alt='photo' onContextMenu={e => {e.preventDefault()}}/> }
+            { type === "text" && text && text.length !== 0 && 
+                <div className="article">
+                    {text.map((line, key) => 
+                        <div key={key}>
+                            {key === 0 ? <h2>{line}</h2> :
+                            line.match(/^\d+\./) ? <h3 style={{margin: 0}}>{line}</h3> : <p style={{margin: 0}}>{line}</p>}<br/>
+                        </div>
+                    )}
+                </div> }
             </div>
         </div>,
         modalRoot
