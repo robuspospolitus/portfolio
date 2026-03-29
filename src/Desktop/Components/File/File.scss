@@ -21,6 +21,7 @@
         max-height: 60px;
         object-fit: contain;
         padding: 5px;
+        image-rendering: pixelated;
     }
     .title {
         font-size: var(--item-font-size);
