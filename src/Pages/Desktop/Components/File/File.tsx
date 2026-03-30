@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow';
-import "./File.scss";
 import useWindowDimensions from '../../Functions/WindowDimensions';
+import "./File.scss";
 
 type Content = {
     id: number,

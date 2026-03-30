@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import './ModalWindow.scss';
 import File from '../File/File';
-import './../../../styles/pixel-corners.scss';
+import './../../../../styles/pixel-corners.scss';
 
 type Content = {
     id: number,
@@ -23,7 +23,6 @@ interface modalProps {
     text?: string[],
 }
 
-// isInFolder??
 export default function ModalWindow({id, isOpen, setIsOpen, content, photo, text, type}: modalProps) {
     const [isActive, setActive] = useState(false);
     const [maximized, setMaximized] = useState(false);
