@@ -11,7 +11,7 @@ function Desktop() {
   
   return (
     <>
-    <img className='background' src={Background} alt='background' onContextMenu={e => {e.preventDefault()}}/>
+    <img className='background' src={Background} draggable={false} alt='background' onContextMenu={e => {e.preventDefault()}}/>
     <div id="main" >
       {folderData.map((folder) => (
         <File isGrid={isGrid} isInFolder={false} data={folder} key={folder.id}/>

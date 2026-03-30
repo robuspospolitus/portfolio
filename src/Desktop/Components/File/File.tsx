@@ -17,10 +17,10 @@ interface FileProps {
     data: Content,
     isGrid: boolean,
     isInFolder: boolean,
-    maximized: boolean
+    maximized?: boolean
 }
 
-export default function File({data, isGrid, isInFolder, maximized}: FileProps){
+export default function File({data, isGrid, isInFolder, maximized=false}: FileProps){
     const [offset, setOffset] = useState<Array<number>>([0,0])
     const [xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
     const [isActive, setActive] = useState<boolean>(false);
@@ -53,7 +53,7 @@ export default function File({data, isGrid, isInFolder, maximized}: FileProps){
         img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
         return img;
     }, []);
-    
+
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
           if (divRef.current && !divRef.current.contains(e.target as Node)) {
@@ -92,11 +92,6 @@ export default function File({data, isGrid, isInFolder, maximized}: FileProps){
             transform: `translate(${newX}px, ${newY}px)`,
             opacity: '1',
         });
-        
-    }
-
-    const handleOpenModalWindow = () => {
-        setIsModalOpen(true);
     }
 
     return(
@@ -107,7 +102,7 @@ export default function File({data, isGrid, isInFolder, maximized}: FileProps){
                 className={`file ${isActive ? "file-active pixel-icons":''}`} 
                 draggable="true" 
                 onClick={() => setActive(true)}
-                onDoubleClick={() => handleOpenModalWindow()}
+                onDoubleClick={() => setIsModalOpen(true)}
                 onBlur={() => setActive(false)}
                 onDragEnter={(e) => e.preventDefault()} 
                 onDragOver={(e) => {e.dataTransfer.dropEffect = "move";e.preventDefault()}} 
@@ -119,11 +114,11 @@ export default function File({data, isGrid, isInFolder, maximized}: FileProps){
                 <p className='title'>{data.title}</p>
             </div>
             {data.content ?
-                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} content={data.content} type={data.type}/>
+                <ModalWindow id={data.id} isOpen={isModalOpen} setIsOpen={setIsModalOpen} content={data.content} type={data.type}/>
             : data.photo ?
-                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} photo={data.photo} type={data.type}/>
+                <ModalWindow id={data.id} isOpen={isModalOpen} setIsOpen={setIsModalOpen} photo={data.photo} type={data.type}/>
             : data.text ?
-                <ModalWindow id={data.id} isOpen={isModalOpen} isInFolder={isInFolder} setIsOpen={setIsModalOpen} text={data.text} type={data.type}/>
+                <ModalWindow id={data.id} isOpen={isModalOpen} setIsOpen={setIsModalOpen} text={data.text} type={data.type}/>
             :
                 <></>
             }
