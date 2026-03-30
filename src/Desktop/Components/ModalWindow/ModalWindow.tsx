@@ -27,6 +27,7 @@ interface modalProps {
 // isInFolder??
 export default function ModalWindow({id, isOpen, setIsOpen, content, photo, text, type}: modalProps) {
     const[isActive, setActive] = useState<boolean>(false);
+    const[maximized, setMaximized] = useState<boolean>(false);
     const[offset, setOffset] = useState<Array<number>>([0,0])
     const[xy, setxy] = useState<Array<number>>([0,0])
     const[styleOfMovingFile,setStyleOfMovingFile] = useState(`translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`)
@@ -71,10 +72,14 @@ export default function ModalWindow({id, isOpen, setIsOpen, content, photo, text
         setIsOpen(() => false);
     }
 
+    const handleMaximize = () => {
+        setMaximized(() => !maximized);
+    }
+
     // CreatePortal is so the modal is not set inside the parent as in modalRoot
     return createPortal(
         <div 
-            className={`modal-window pixel-corners ${isActive ? "modal-window-active":''} ${type==="image" && "modal-photo"}`}
+            className={`modal-window pixel-corners ${isActive ? "modal-window-active":''} ${type==="image" && "modal-photo"} ${maximized && "modal-maximized"}`}
             ref={divRef}
             onClick={() => setActive(true)}
             style={{display: `${isOpen ? 'block': 'none'}`, transform: `${styleOfMovingFile}`}} 
@@ -89,13 +94,14 @@ export default function ModalWindow({id, isOpen, setIsOpen, content, photo, text
             onDrag={(e) => handleDrag(e)}
             onDragEnd={(e) => {handleDrag(e)}}
             >
+                <button className='mw-nb-maximize pixel-buttons' onClick={() => handleMaximize()}/>
                 <button className='mw-nb-close pixel-buttons' onClick={() => handleClose()}/>
             </div>
             <div className="mw-content pixel-corners" onClick={() => setActive(true)} key={id}>
             {
                 type === "folder" && content &&(
                 content.length > 0 ? 
-                    (   content.map((file, index) => ( <File key={index} data={file} isGrid isInFolder /> ))) 
+                    (   content.map((file, index) => ( <File key={index} data={file} isGrid isInFolder maximized={maximized} /> ))) 
                     : 
                     (
                         <div className="folder-not-available">

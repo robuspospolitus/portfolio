@@ -1,7 +1,18 @@
 {
    "files":[
     {
-      "id": 1,
+          "id": 1,
+          "type": "text",
+          "source": "images/folder.png",
+          "title": "About Me",
+          "text": [
+            "Hi, I'm Nadia and I'm a front-end developer",
+            "I am an ambitious 20 years old student on a 2nd semester of Computer Enginnering and have been actively developing as a front-end developer for the past few years.",
+            ""
+          ]
+        },
+    {
+      "id": 2,
       "type": "folder",
       "source": "images/folder.png",
       "title": "Projects",
@@ -65,7 +76,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "folder",
       "title": "Meszka",
       "source": "images/folder.png",

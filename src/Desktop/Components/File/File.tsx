@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import ModalWindow from '../ModalWindow/ModalWindow';
 import "./File.scss";
 import useWindowDimensions from '../../Functions/WindowDimensions';
@@ -16,28 +16,44 @@ type Content = {
 interface FileProps {
     data: Content,
     isGrid: boolean,
-    isInFolder: boolean
+    isInFolder: boolean,
+    maximized: boolean
 }
 
-export default function File({data, isGrid, isInFolder}: FileProps){
-    const inFolderStyle = data.id < 5 ? [(data.id-1)*110, 0] : [(data.id-5)*100, 110];
-    
+export default function File({data, isGrid, isInFolder, maximized}: FileProps){
     const [offset, setOffset] = useState<Array<number>>([0,0])
     const [xy, setxy] = useState<Array<number>>([0,(100*data.id-100)])
     const [isActive, setActive] = useState<boolean>(false);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const { height, width } = useWindowDimensions();
 
+    const columns = useMemo(() => { return Math.max(1, Math.floor(width * 0.85 / 110)); }, [width]);
+    const inFolderStyle = useMemo<[number, number]>(() => {
+        const index = data.id - 1;
+        const cols = maximized ? columns : 4;
+        return [
+            (index % cols) * 110,
+            Math.floor(index / cols) * 110
+        ];
+    }, [maximized, data.id, columns]);
+
     //Moving on the desktop
     const [styleOfMovingFile,setStyleOfMovingFile] = useState({ transform: `translate(${(xy[0]-offset[0])}px, ${(xy[1]-offset[1])}px)`, opacity: '1' })
     //Moving in the folder
-    const [styleOfFolderFile] = useState({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
+    const [styleOfFolderFile, setStyleOfFolderFile] = useState({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
     
-    //no img while dragging
-    const drag = new Image(0,0);
-    const divRef = useRef<HTMLDivElement>(null);
-    drag.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    useEffect(() => {
+        setStyleOfFolderFile({ transform: `translate(${(inFolderStyle[0]-offset[0])}px, ${(inFolderStyle[1]-offset[1])}px)`, opacity: '1' })
+    }, [maximized, width])
 
+    //no img while dragging
+    const divRef = useRef<HTMLDivElement>(null);
+    const drag = useMemo(() => {
+        const img = new Image(0, 0);
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        return img;
+    }, []);
+    
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
           if (divRef.current && !divRef.current.contains(e.target as Node)) {
@@ -50,35 +66,31 @@ export default function File({data, isGrid, isInFolder}: FileProps){
 
     //offset of the mouse relative to the object
     const getOffset = (e:React.DragEvent) => {
-        let offsetX = e.nativeEvent.offsetX;
-        let offsetY = e.nativeEvent.offsetY;
-        setOffset(() => [offsetX,offsetY]);
+        setOffset(() => [e.nativeEvent.offsetX, e.nativeEvent.offsetY]);
     }
 
     // Makes dragging object visible while dragging if that makes sense
     // Also useful for dragging on place where mouse is set instead of grid
     const handleDrag = (e:React.DragEvent) => {
-         let x = e.clientX;
-         let y = e.clientY;
-         setxy(() =>[x,y]);
-         setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${(x-offset[0])}px, ${(y-offset[1])}px)`, opacity: `${isGrid ? '0.5':'1'}` })
+         setxy(() =>[e.clientX, e.clientY]);
+         setStyleOfMovingFile({...styleOfMovingFile, transform: `translate(${(e.clientX-offset[0])}px, ${(e.clientY-offset[1])}px)`, opacity: `${isGrid ? '0.5':'1'}` })
     }
 
     // grid-like placement
     const finalPlace = (e:React.DragEvent) => {
-        let x = Math.round((e.clientX-offset[0])/100)*100;
-        let y = Math.round((e.clientY-offset[1])/100)*100;
-        let xwidth = Math.floor((width)/100)*100; 
-        let yheight = Math.floor((height)/100)*100; 
+        const x = Math.round((e.clientX-offset[0])/100)*100;
+        const y = Math.round((e.clientY-offset[1])/100)*100;
+        const xwidth = Math.floor((width)/100)*100; 
+        const yheight = Math.floor((height)/100)*100; 
 
-        let newX = Math.max(0, Math.min(x, xwidth - 100));
-        let newY = Math.max(0, Math.min(y, yheight - 100));
+        const newX = Math.max(0, Math.min(x, xwidth - 100));
+        const newY = Math.max(0, Math.min(y, yheight - 100));
 
         setxy(() => [newX, newY]);
         setStyleOfMovingFile({
-        ...styleOfMovingFile,
-        transform: `translate(${newX}px, ${newY}px)`,
-        opacity: '1',
+            ...styleOfMovingFile,
+            transform: `translate(${newX}px, ${newY}px)`,
+            opacity: '1',
         });
         
     }

@@ -23,6 +23,16 @@
             border: 2px solid rgba(146, 34, 34, 0.8);
             box-sizing: border-box;
         }
+        .mw-nb-maximize {
+            height: 25px;
+            width: 45px;
+            margin-top: 2px;
+            position: absolute;
+            right: 66.2px;
+            background-color: rgba(52, 38, 173, 0.5);
+            border: 2px solid rgba(34, 51, 146, 0.5);
+            box-sizing: border-box;
+        }
     }
     .mw-content {
         margin-left: 5px;
@@ -58,6 +68,18 @@
                 text-shadow: none;
             }
         }
+    }
+}
+.modal-maximized {
+    transform: translate(0px, 0px) !important;
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    margin-top: 24px;
+    box-sizing: border-box;
+    .mw-content {
+        width: calc(100% - 10px);
+        height: calc(100% - 40px);
     }
 }
 .modal-photo {
