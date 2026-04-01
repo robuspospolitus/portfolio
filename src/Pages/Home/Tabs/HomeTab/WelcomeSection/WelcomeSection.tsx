@@ -1,0 +1,40 @@
+import XLogo from '../../../../../assets/Logos/XLogo.tsx';
+import LinkedinLogo from '../../../../../assets/Logos/LinkedinLogo.tsx';
+import GithubLogo from '../../../../../assets/Logos/GitHubLogo.tsx';
+import './WelcomeSection.scss';
+
+interface Props{
+    about: string[]
+}
+
+export default function WelcomeSection({about}:Props) {
+    return (
+        <div className="section clear-section">
+            <h1 style={{textAlign: "center"}} id='welcome'>{about && about[0]}</h1>
+            <div className="side-to-side welcome-side-to-side" style={{gap:"48px"}}>
+                <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
+                <div className='gap'>
+                    <h2>
+                        Creating immersive, 
+                        <div>
+                            high-fidelity 
+                        </div> 
+                        experiences
+                    </h2>
+                    <p>Front-end developer</p>
+                </div>
+            </div>
+            <div className='side-to-side' style={{gap:"24px", margin:"24px", justifyContent:"center", alignContent:"center", width:"100%"}}>
+                <a href='https://github.com/robuspospolitus' target='_blank' className='socials-logo'>
+                    <GithubLogo/>
+                </a>
+                <a href='https://x.com/robuspospolitus' target='_blank' className='socials-logo'>
+                    <XLogo/>
+                </a>
+                <a href='https://www.linkedin.com/in/nadia-karolina-gill-3a81a3331/' target='_blank' className='socials-logo'>
+                    <LinkedinLogo/>
+                </a>
+            </div>
+        </div>
+    );
+}

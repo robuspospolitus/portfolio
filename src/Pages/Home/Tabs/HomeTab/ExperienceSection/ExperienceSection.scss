@@ -1,0 +1,24 @@
+.experience {
+    justify-content: left;
+    width: 70%;
+    margin: 24px;
+    h2 {
+        font-size: 36px;
+    }
+    h3 {
+        font-size: 36px;
+        line-height: 16px;
+        font-weight: 100;
+    }
+    .line {
+        height: 22px;
+        width: 2.5px;
+        background-color: white;
+        margin-left: 2.1px;
+        transition: height 2s;
+        transition-delay: 0.5s;
+    }
+    .expanded {
+        height: 600px;
+    }
+}

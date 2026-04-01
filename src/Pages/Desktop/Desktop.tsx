@@ -2,7 +2,7 @@ import { useState } from 'react';
 import File from './Components/File/File';
 import './Desktop.scss';
 import Background from '../../Assets/Images/image.png';
-import data from '../../Assets/Data/data.json';
+import data from '../../assets/Data/data.json';
 
 const folderData = data.files;
 

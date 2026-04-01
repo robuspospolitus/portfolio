@@ -1,0 +1,32 @@
+.section {
+    .socials-logo {
+        height: 50px;
+        width: 50px;
+        transition: color 0.2s;
+    }
+    a { color: white; }
+    .socials-logo:hover {
+        color: var(--primary)
+    }
+}
+#welcome {
+    border: 0 solid white;
+    transition: border 0.05s;
+    box-sizing: border-box;
+    height: 32px;
+    font-size: 32px;
+    font-weight: 100;
+    &:hover {
+        border-bottom: 2px solid white;
+    }
+}
+
+@keyframes gradient {
+    to { background-position: 200% center; }
+}
+
+@media screen and (max-width: 703px) {
+    .welcome-side-to-side{
+        flex-direction: column;
+    }
+}
