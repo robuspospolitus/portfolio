@@ -16,7 +16,7 @@
     box-sizing: border-box;
     color: white;
     font-size: 24px;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: none;
 }
 
@@ -26,6 +26,7 @@
     max-width: 1000px;
     margin: auto;
     gap: 4px;
+    position: relative;
     .home-tab {
         width: 100px;
         background-color: var(--home-border);
@@ -44,6 +45,12 @@
         z-index: 2;
         margin-bottom: 0;
     }
+    .desktop-tab {
+        width: auto;
+        position: absolute;
+        right: 0;
+        filter: brightness(100%);
+    }
 }
 #home-content {
     width: 100%;
@@ -60,10 +67,18 @@
     z-index: 1;
     backdrop-filter: blur(3px);
 }
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 860px) {
     #home{
-        padding: 24px;
-        padding-bottom: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+@media screen and (max-width: 730px) {
+    .desktop-tab {
+        width: 200px !important;
+        z-index: 2;
+        top: 64px;
+        right: 10px !important;
     }
 }
 
