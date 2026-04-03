@@ -1,0 +1,68 @@
+.show-off-container {
+    min-height: 300px;
+    width: auto;
+    background-color: var(--home-color);
+    padding: 8px;
+    display: flex;
+    align-self: center;
+}
+
+.show-off-container-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--home-color);
+    color: white;
+    padding: 24px;
+    h3 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 24px;
+    }
+}
+
+
+.pink {
+    background-color: rgba(204, 106, 191, 0.8);
+    .show-off-container-content h3 {
+        color: rgba(204, 106, 191);
+    }
+}
+.blue {
+    background-color: rgba(86, 133, 221, 0.801);
+    .show-off-container-content h3 {
+        color: rgba(86, 133, 221);
+    }
+}
+.yellow {
+    background-color: rgba(199, 186, 68, 0.8);
+    .show-off-container-content h3 {
+        color: rgba(199, 186, 68);
+    }
+}
+.green {
+    background-color: rgba(83, 199, 68, 0.8);
+    .show-off-container-content h3 {
+        color: rgba(83, 199, 68);
+    }
+}
+.orange {
+    background-color: rgba(199, 94, 68, 0.8);
+    .show-off-container-content h3 {
+        color: rgba(199, 94, 68,);
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .moving-cards {
+        .side-to-side {
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+        .show-off-container {
+            width: 80% !important;
+        }
+    }
+}

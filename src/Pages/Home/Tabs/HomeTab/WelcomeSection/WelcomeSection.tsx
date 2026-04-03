@@ -9,8 +9,8 @@ interface Props{
 
 export default function WelcomeSection({about}:Props) {
     return (
-        <div className="section clear-section">
-            <h1 style={{textAlign: "center"}} id='welcome'>{about && about[0]}</h1>
+        <section className="clear-section">
+            <h1 style={{textAlign: "center"}} id='welcome' className='border-bottom-animation'>{about && about[0]}</h1>
             <div className="side-to-side welcome-side-to-side" style={{gap:"48px"}}>
                 <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
                 <div className='gap'>
@@ -25,16 +25,16 @@ export default function WelcomeSection({about}:Props) {
                 </div>
             </div>
             <div className='side-to-side' style={{gap:"24px", margin:"24px", justifyContent:"center", alignContent:"center", width:"100%"}}>
-                <a href='https://github.com/robuspospolitus' target='_blank' className='socials-logo'>
+                <a href='https://github.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
                     <GithubLogo/>
                 </a>
-                <a href='https://x.com/robuspospolitus' target='_blank' className='socials-logo'>
+                <a href='https://x.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
                     <XLogo/>
                 </a>
-                <a href='https://www.linkedin.com/in/nadia-karolina-gill-3a81a3331/' target='_blank' className='socials-logo'>
+                <a href='https://www.linkedin.com/in/nadia-karolina-gill-3a81a3331/' target='_blank' className='socials-logo color-hover'>
                     <LinkedinLogo/>
                 </a>
             </div>
-        </div>
+        </section>
     );
 }

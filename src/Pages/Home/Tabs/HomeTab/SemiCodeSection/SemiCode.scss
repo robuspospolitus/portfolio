@@ -1,0 +1,46 @@
+.semi-code {
+    gap: 0px !important;
+    h2, p {
+        font-size: 24px;
+        text-align: left;
+        display: flex;
+        div {
+            font-size: 24px;
+            line-height: normal;
+            max-height: 24px;
+            &:hover {
+                font-size: 25px;
+            }
+        }
+    }
+}
+.text-animation {
+    background-image: linear-gradient(to right, white, var(--primary), var(--primary), white);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 8s linear infinite;
+}
+.written-text {
+    min-height: 24px;
+}
+
+@keyframes gradient {
+    to { background-position: 200% center; }
+}
+@media screen and (max-width: 425px) {
+    .full-section {
+        .side-to-side {
+            flex-direction: column;
+            gap: 24px;
+            .gap {
+                width: 100% !important;
+                p {
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}
