@@ -2,7 +2,7 @@
     min-height: 300px;
     width: auto;
     background-color: var(--home-color);
-    padding: 8px;
+    padding: var(--size-xs);
     display: flex;
     align-self: center;
 }
@@ -14,44 +14,44 @@
     justify-content: center;
     background-color: var(--home-color);
     color: white;
-    padding: 24px;
+    padding: var(--size);
     h3 {
-        font-size: 32px;
+        font-size: var(--font-size-h);
     }
     p {
-        font-size: 24px;
+        font-size: var(--size);
     }
 }
 
 
 .pink {
-    background-color: rgba(204, 106, 191, 0.8);
+    background-color: var(--pink-opacity);
     .show-off-container-content h3 {
-        color: rgba(204, 106, 191);
+        color: var(--pink);
     }
 }
 .blue {
-    background-color: rgba(86, 133, 221, 0.801);
+    background-color: var(--blue-opacity);
     .show-off-container-content h3 {
-        color: rgba(86, 133, 221);
+        color: var(--blue);
     }
 }
 .yellow {
-    background-color: rgba(199, 186, 68, 0.8);
+    background-color: var(--yellow-opacity);
     .show-off-container-content h3 {
-        color: rgba(199, 186, 68);
+        color: var(--yellow);
     }
 }
 .green {
-    background-color: rgba(83, 199, 68, 0.8);
+    background-color: var(--green-opacity);
     .show-off-container-content h3 {
-        color: rgba(83, 199, 68);
+        color: var(--green);
     }
 }
 .orange {
-    background-color: rgba(199, 94, 68, 0.8);
+    background-color: var(--orange-opacity);
     .show-off-container-content h3 {
-        color: rgba(199, 94, 68,);
+        color: var(--orange);
     }
 }
 
@@ -59,7 +59,7 @@
     .moving-cards {
         .side-to-side {
             flex-direction: column;
-            margin-bottom: 24px;
+            margin-bottom: var(--size);
         }
         .show-off-container {
             width: 80% !important;

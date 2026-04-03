@@ -12,10 +12,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 12px 10% 0 10%;
+    padding: var(--size-s) 10% 0 10%;
     box-sizing: border-box;
     color: white;
-    font-size: 24px;
+    font-size: var(--size);
     overflow-y: auto;
     scrollbar-width: none;
 }
@@ -25,18 +25,18 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    gap: 4px;
+    gap: var(--size-xxs);
     position: relative;
     .home-tab {
         width: 100px;
         background-color: var(--home-border);
-        border: 8px solid var(--home-border);
+        border: var(--size-xs) solid var(--home-border);
         text-align: center;
-        border-radius: 24px;
+        border-radius: var(--size);
         filter: brightness(50%);
         cursor: pointer;
-        padding: 4px 16px;
-        margin-bottom: 12px;
+        padding: var(--size-xxs) var(--size-s);
+        margin-bottom: var(--size-s);
     }
     .active-tab {
         filter: brightness(100%);
@@ -44,6 +44,10 @@
         border-bottom-right-radius: 0;
         z-index: 2;
         margin-bottom: 0;
+        transition: all 0.5s;
+        &:hover {
+            color: var(--primary);
+        }
     }
     .desktop-tab {
         width: auto;
@@ -69,9 +73,9 @@
     overflow: hidden;
     margin: auto;
     background-color: var(--home-color);
-    border-top-right-radius: 24px;
+    border-top-right-radius: var(--size);
     box-sizing: border-box;
-    border: 8px solid var(--home-border);
+    border: var(--size-xs) solid var(--home-border);
     position: relative;
     top: -8px;
     z-index: 1;
@@ -79,13 +83,13 @@
 }
 @media screen and (max-width: 860px) {
     #home{
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: var(--margin);
+        padding-right: var(--margin);
     }
 }
 @media screen and (max-width: 375px) {
     #home{
-        padding-left: 00px;
+        padding-left: 0px;
         padding-right: 0px;
     }
 }
@@ -93,7 +97,7 @@
     .desktop-tab {
         width: 200px !important;
         z-index: 2;
-        top: 64px;
+        top: var(--size-xxl);
         right: 10px !important;
     }
 }

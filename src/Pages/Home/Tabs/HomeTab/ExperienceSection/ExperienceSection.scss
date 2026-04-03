@@ -1,16 +1,16 @@
 .experience {
     justify-content: left;
-    margin: 24px;
+    margin: var(--size);
     h2 {
-        font-size: 36px;
+        font-size: var(--font-size-h);
     }
     h3 {
-        font-size: 36px;
-        line-height: 16px;
+        font-size: var(--font-size-h);
+        line-height: var(--size-s);
         font-weight: 100;
     }
     .line {
-        height: 22px;
+        height: var(--size);
         width: 2.5px;
         background-color: white;
         margin-left: 2.1px;

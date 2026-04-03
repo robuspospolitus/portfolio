@@ -1,17 +1,9 @@
 .semi-code {
     gap: 0px !important;
     h2, p {
-        font-size: 24px;
+        font-size: var(--size);
         text-align: left;
         display: flex;
-        div {
-            font-size: 24px;
-            line-height: normal;
-            max-height: 24px;
-            &:hover {
-                font-size: 25px;
-            }
-        }
     }
 }
 .text-animation {
@@ -23,7 +15,7 @@
     animation: gradient 8s linear infinite;
 }
 .written-text {
-    min-height: 24px;
+    min-height: var(--size);
 }
 
 @keyframes gradient {
@@ -33,7 +25,7 @@
     .full-section {
         .side-to-side {
             flex-direction: column;
-            gap: 24px;
+            gap: var(--size);
             .gap {
                 width: 100% !important;
                 p {

@@ -20,7 +20,7 @@ export default function Home() {
                     <div className={`home-tab ${activeTab===3 ? "active-tab pixel-corners-top":"pixel-corners"}`} onClick={()=>setActiveTab(3)}>More</div>
                     <Link to="desktop" style={{color:"white"}}><div className={`desktop-tab home-tab pixel-corners`}>Desktop experience</div></Link>
                </nav>
-                <main id='home-content' className={activeTab===1 ? "pixel-corners-top-right":`pixel-corners-top`} style={{borderTopLeftRadius: activeTab===1 ?"0":"24px"}}>
+                <main id='home-content' className={activeTab===1 ? "pixel-corners-top-left":`pixel-corners`} style={{borderTopLeftRadius: activeTab===1 ?"0":"24px"}}>
                     {activeTab===1 && <HomeTab/>}
                     {activeTab===2 && <ProjectsTab/>}
                     {activeTab===3 && <MoreTab/>}

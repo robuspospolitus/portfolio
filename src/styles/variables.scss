@@ -1,6 +1,28 @@
 :root {
     --item-font-size: 16px;
     --item-in-modal-font-size: 18px;
+    
+    --size-xxs: 4px;
+    --size-xs: 8px;
+    --size-s: 12px;
+    --size: 24px;
+    --size-l: 48px;
+    --size-xl: 64px;
+
+    --font-size-xl: 52px;
+    --font-size-h: 36px;
+    --font-size-p: 32px;
+
+    --pink: rgba(204, 106, 191);
+    --pink-opacity: rgba(204, 106, 191, 0.8);
+    --blue: rgba(86, 133, 221);
+    --blue-opacity: rgba(86, 133, 221, 0.8);
+    --yellow: rgba(199, 186, 68);
+    --yellow-opacity: rgba(199, 186, 68, 0.8);
+    --green: rgba(83, 199, 68);
+    --green-opacity: rgba(83, 199, 68, 0.8);
+    --orange: rgba(199, 94, 68);
+    --orange-opacity: rgba(199, 94, 68, 0.8);
 }
 
 .light-theme {

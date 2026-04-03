@@ -1,6 +1,6 @@
 .moving-cards {
-    gap: 24px;
+    gap: var(--size);
     .side-to-side {
-        margin-bottom: 24px;
+        margin-bottom: var(--size);
     }
 }
