@@ -1,0 +1,37 @@
+.tech-stack-tab {
+    h2 {
+        max-height: var(--font-size-xl);
+    }
+    p {
+        text-align: center;
+    }
+    .carousel {
+        display: flex;
+        width: 80%;
+        height: var(--size-xl);
+        gap: var(--size-s);
+        overflow: hidden;
+        position: relative;
+        padding: var(--size);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(to right, var(--home-border) 0%, transparent 30%, transparent 70%, var(--home-border) 100%);
+        }
+    }
+    .track {
+        display: flex;
+        gap: var(--size-s);
+        width: max-content;
+        animation: carousel 20s linear infinite;
+    }
+}
+@keyframes carousel {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}

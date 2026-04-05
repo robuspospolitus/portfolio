@@ -44,7 +44,7 @@
         border-bottom-right-radius: 0;
         z-index: 2;
         margin-bottom: 0;
-        transition: all 0.5s;
+        transition: color 0.5s;
         &:hover {
             color: var(--primary);
         }
