@@ -4,6 +4,7 @@ import HomeTab from './Tabs/HomeTab/HomeTab';
 import ProjectsTab from './Tabs/ProjectsTab/ProjectsTab';
 import MoreTab from './Tabs/MoreTab/MoreTab';
 import Background from '../../Assets/Images/image.png';
+import Footer from './Components/Footer/Footer';
 import '../../styles/pixel-corners.scss';
 import './Home.scss';
 
@@ -25,6 +26,7 @@ export default function Home() {
                     {activeTab===2 && <ProjectsTab/>}
                     {activeTab===3 && <MoreTab/>}
                 </main>
+                <Footer/>
             </div>
         </>
     )

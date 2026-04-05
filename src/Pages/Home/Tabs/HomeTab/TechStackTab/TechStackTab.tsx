@@ -22,21 +22,21 @@ export default function TechStackTab() {
 const CarouselImages = () => {
     return (
         <>
+            <img src="https://skillicons.dev/icons?i=html" />
+            <img src="https://skillicons.dev/icons?i=css" />
+            <img src="https://skillicons.dev/icons?i=js" />
+            <img src="https://skillicons.dev/icons?i=ts" />
+            <img src="https://skillicons.dev/icons?i=scss" />
+            <img src="https://skillicons.dev/icons?i=vite" />
+            <img src="https://skillicons.dev/icons?i=react" />
+            <img src="https://skillicons.dev/icons?i=next" />
+            <img src="https://skillicons.dev/icons?i=vue" />
             <img src="https://skillicons.dev/icons?i=git" />
             <img src="https://skillicons.dev/icons?i=github" />
-            <img src="https://skillicons.dev/icons?i=scss" />
             <img src="https://skillicons.dev/icons?i=arch" />
             <img src="https://skillicons.dev/icons?i=c" />
             <img src="https://skillicons.dev/icons?i=cs" />
-            <img src="https://skillicons.dev/icons?i=js" />
-            <img src="https://skillicons.dev/icons?i=ts" />
             <img src="https://skillicons.dev/icons?i=vscode" />
-            <img src="https://skillicons.dev/icons?i=html" />
-            <img src="https://skillicons.dev/icons?i=css" />
-            <img src="https://skillicons.dev/icons?i=react" />
-            <img src="https://skillicons.dev/icons?i=vue" />
-            <img src="https://skillicons.dev/icons?i=next" />
-            <img src="https://skillicons.dev/icons?i=vite" />
         </>
     )
 }

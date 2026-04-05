@@ -1,0 +1,43 @@
+footer {
+    background: linear-gradient(to bottom, transparent, var(--home-border));
+    width: 100%;
+    #made-with {
+        display: flex; 
+        gap: var(--size-xs);
+        align-items: center;
+        justify-content: center;
+    }
+    p {
+        text-align: center;
+        padding-top: var(--size-s);
+    }
+    .rainbow {
+        height: var(--size);
+        width: var(--size);
+        padding-bottom: var(--size-s);
+        animation: rainbow 8s linear infinite, rotate 1s linear infinite;
+    }
+    #footer-separator {
+        width: 50%;
+        height: 2px;
+        margin: auto;
+        background: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+    }
+    #credit {
+        padding-bottom: var(--size-s);
+        p { color: #ffffff50;}
+    }
+}
+@keyframes rainbow {
+    0% { color: #ff5050;}
+    10% { color: #ff9650;}
+    20% { color: #fff350;}
+    30% { color: #64ff50;}
+    40% { color: #50ffbc;}
+    50% { color: #50dcff;}
+    60% { color: #5070ff;}
+    70% { color: #a250ff;}
+    80% { color: #ff50f6;}
+    90% { color: #ff5093;}
+    100% { color: #ff5050;}
+}
