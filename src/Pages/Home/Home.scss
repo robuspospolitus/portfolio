@@ -93,11 +93,11 @@
         padding-right: 0px;
     }
 }
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 660px) {
     .desktop-tab {
         width: 200px !important;
         z-index: 2;
-        top: var(--size-xxl);
+        top: var(--size-xl);
         right: 10px !important;
     }
 }
