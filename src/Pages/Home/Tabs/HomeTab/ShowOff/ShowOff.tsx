@@ -1,4 +1,4 @@
-import MovingCard from '../../../Components/MovingCard';
+import MovingCard from '../../../Components/MovingCard/MovingCard';
 import './ShowOff.scss';
 import '../HomeTab.scss'
 
