@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Footer.scss';
 
 export default function Footer() {
-    const text = ["❤","✿","✪"]
+    const text = ["❤","ঌ","✪"]
     const [tick, setTick] = useState(0);
 
     useEffect(() => {

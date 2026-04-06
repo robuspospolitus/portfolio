@@ -23,42 +23,64 @@
       "title": "Projects",
       "content": [
         {
-          "id": 1,
-          "type": "folder",
+          "id": 4,
+          "type": "project",
           "source": "images/folder.png",
           "title": "Flower Grove",
-          "content": []
-        },
-        {
-          "id": 2,
-          "type": "folder",
-          "source": "images/folder.png",
-          "title": "Girly Time Tracker",
-          "content": []
+          "date": "2022",
+          "photo": "images/projects/flower_grove/0.png",
+          "description": "Frontend web project focused strictly on styling and UI. Made with React Router.",
+          "text": [],
+          "stack": [],
+          "images": [],
+          "website": "www",
+          "repository": ""
+
         },
         {
           "id": 3,
-          "type": "folder",
+          "type": "project",
           "source": "images/folder.png",
-          "title": "Cocktail Browser",
-          "content": []
+          "title": "Girly Time Tracker",
+          "date": "2025",
+          "photo": "",
+          "description": "Desktop Electron React app for time measuring. Includes different formats of input, categories, statistics, themes and sounds.",
+          "text": [],
+          "stack": [],
+          "images": [],
+          "website": "",
+          "repository": ""
         },
         {
-          "id": 4,
-          "type": "folder",
+          "id": 2,
+          "type": "project",
           "source": "images/folder.png",
-          "title": "Better Timer",
-          "content": []
+          "title": "Cocktail Browser",
+          "date": "22 march 2026",
+          "photo": "images/projects/cocktail_browser/0.png",
+          "description": "Next.js web app for cocktail browsing using external API. Using Typescript, TanstackQuery and shadcn components.",
+          "text": [],
+          "stack": [],
+          "images": [],
+          "website": "",
+          "repository": ""
+        },
+        {
+          "id": 1,
+          "type": "project",
+          "source": "images/folder.png",
+          "title": "Portfolio",
+          "date": "in development",
+          "photo": "images/projects/portfolio/0.png",
+          "description": "My own portfolio website showing off my skillset with additional desktop experience simulation.",
+          "text": [],
+          "stack": [],
+          "images": [],
+          "website": "",
+          "repository": ""
         },
         {
           "id": 5,
-          "type": "folder",
-          "source": "images/folder.png",
-          "title": "Portfolio",
-          "content": []
-        },
-        {
-          "id": 6,
           "type": "text",
           "source": "images/doc.png",
           "title": "Future ideas",
