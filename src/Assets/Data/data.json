@@ -33,8 +33,8 @@
           "text": [],
           "stack": [],
           "images": [],
-          "website": "www",
-          "repository": ""
+          "website": "https://flower-grove.vercel.app/",
+          "repository": "https://github.com/robuspospolitus/flower-grove"
 
         },
         {
@@ -49,7 +49,7 @@
           "stack": [],
           "images": [],
           "website": "",
-          "repository": ""
+          "repository": "https://github.com/robuspospolitus/girly-time-tracker"
         },
         {
           "id": 2,
@@ -62,8 +62,8 @@
           "text": [],
           "stack": [],
           "images": [],
-          "website": "",
-          "repository": ""
+          "website": "https://recruitment-frontend-solvro.vercel.app/",
+          "repository": "https://github.com/robuspospolitus/recruitment-frontend-solvro"
         },
         {
           "id": 1,
@@ -76,8 +76,8 @@
           "text": [],
           "stack": [],
           "images": [],
-          "website": "",
-          "repository": ""
+          "website": "/",
+          "repository": "https://github.com/robuspospolitus/portfolio"
         },
         {
           "id": 5,
