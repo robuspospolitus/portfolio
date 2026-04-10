@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './ProjectsTab.scss';
 import data from '../../../../assets/Data/data.json';
+import '../HomeTab/TechStackTab/TechStackTab.scss';
+import ProjectInfo from './ProjectInfo/ProjectInfo';
 const projects = data.files[1].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id});
 
 export default function ProjectsTab() {
     const [chosenProject, setChosenProject] = useState(0);
     const [isActive, setIsActive] = useState(false);
+    const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
 
     const handleShow = (id:number) => {
         setChosenProject(id);
-        setIsActive(true);
+        setIsActive((e) => !e);
+        scrollRef.current.scrollIntoView();
+    }
+    const handleClose = () => {
+        setIsActive(false);
     }
     return (
-        <div id='project-page-wrapper'>
+        <div ref={scrollRef} id='project-page-wrapper'>
             <div id="project-list">
                 <div id="projects-title">
                     <h1>Projects</h1>
@@ -21,40 +28,36 @@ export default function ProjectsTab() {
                 <div className="items-wrapper">
                     {projects?.map((project) => 
                     <div key={project.id}>
-                        { project.id % 2 === 0 ?
-                        <section className="clear-section">
-                            <div className='item-wrapper pixel-corners'>
-                                <div className='item-content pixel-corners'>
-                                    <Project data={project} onClick={handleShow}/>
-                                </div>
-                            </div>
-                        </section> :
-                        <section className="full-section">
+                        <section>
                             <div className='item-wrapper pixel-corners'>
                                 <div className='item-content pixel-corners'>
                                     <Project data={project} onClick={handleShow}/>
                                 </div>
                             </div>
                         </section>
-                        
-                        }
                     </div>
                 )}
                 </div>
             </div>
             <div className={`project-info ${isActive && "project-active"}`}>
-                <ProjectInfo data={projects && projects[chosenProject] } onClick={handleShow}/>
+                { projects &&
+                    <ProjectInfo data={projects[chosenProject] } onClick={handleClose}/>
+                }
             </div>
         </div>
     )
 }
 
-type Project = {
+type Stack = {
+    words: string[],
+    icons: string[]
+}
+export type Project = {
     id: number,
     images?: string[],
     photo?: string,
     source: string,
-    stack?: string[],
+    stack?: Stack,
     description?: string,
     text?: string[],
     title: string,
@@ -63,7 +66,7 @@ type Project = {
     website?: string
 }
 type ProjectProps = {
-    data?: Project,
+    data: Project,
     onClick: (id:number) => void
 }
 function Project({data, onClick}:ProjectProps) {
@@ -85,9 +88,3 @@ function Project({data, onClick}:ProjectProps) {
     )
 }
 
-function ProjectInfo({data, onClick}:ProjectProps) {
-    return (
-        <> 
-        </>
-    )
-}

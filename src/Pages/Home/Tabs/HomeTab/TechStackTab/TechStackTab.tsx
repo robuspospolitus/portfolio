@@ -14,7 +14,6 @@ export default function TechStackTab() {
                 </div>
                 
             </div>
-            <div className="shadow"></div>
         </section>
     )
 }
@@ -31,12 +30,15 @@ const CarouselImages = () => {
             <img src="https://skillicons.dev/icons?i=react" />
             <img src="https://skillicons.dev/icons?i=next" />
             <img src="https://skillicons.dev/icons?i=vue" />
+            <img src="https://skillicons.dev/icons?i=electron" />
             <img src="https://skillicons.dev/icons?i=git" />
             <img src="https://skillicons.dev/icons?i=github" />
-            <img src="https://skillicons.dev/icons?i=arch" />
+            <img src="https://skillicons.dev/icons?i=linux" />
             <img src="https://skillicons.dev/icons?i=c" />
             <img src="https://skillicons.dev/icons?i=cs" />
             <img src="https://skillicons.dev/icons?i=vscode" />
+            <img src="https://skillicons.dev/icons?i=visualstudio" />
+            <img src="https://skillicons.dev/icons?i=latex" />
         </>
     )
 }

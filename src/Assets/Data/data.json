@@ -31,7 +31,10 @@
           "photo": "images/projects/flower_grove/0.png",
           "description": "Frontend web project focused strictly on styling and UI. Made with React Router.",
           "text": [],
-          "stack": [],
+          "stack": {
+            "icons": [],
+            "words": []
+          },
           "images": [],
           "website": "https://flower-grove.vercel.app/",
           "repository": "https://github.com/robuspospolitus/flower-grove"
@@ -46,7 +49,10 @@
           "photo": "",
           "description": "Desktop Electron React app for time measuring. Includes different formats of input, categories, statistics, themes and sounds.",
           "text": [],
-          "stack": [],
+          "stack": {
+            "icons": [],
+            "words": []
+          },
           "images": [],
           "website": "",
           "repository": "https://github.com/robuspospolitus/girly-time-tracker"
@@ -59,9 +65,45 @@
           "date": "22 march 2026",
           "photo": "images/projects/cocktail_browser/0.png",
           "description": "Next.js web app for cocktail browsing using external API. Using Typescript, TanstackQuery and shadcn components.",
-          "text": [],
-          "stack": [],
-          "images": [],
+          "text": [
+            "*About",
+            "A modern, responsive web application for exploring cocktails, built with a focus on usability, clean design, and performance. The app allows users to browse, search, and discover cocktails, view detailed ingredient information, and save their favorites for quick access.",
+            "*Features",
+            "- Browse a collection of cocktails fetched from an external API.",
+            "-Mark cocktails as favorites and easily access them later.",
+            "- Quickly find cocktails using selected fields such as name, category, or glass type.",
+            "- Explore full cocktail details, including ingiedients, instructions and additional metadata from the API",
+            "- Responsive Design",
+            "- Optimized for both desktop and mobile devices.",
+            "*Additional Notes",
+            "The application uses TanStack Query for efficient data fetching, caching, and synchronization.",
+            "Favorites are stored locally (e.g. in LocalStorage) to persist user preferences.",
+            "UI components are built with accessibility and consistency in mind using shadcn/ui.",
+            "Created as a recruitment project with emphasis on code quality, UX, and modern web development practices."
+          ],
+          "stack": {
+            "icons": [
+              "nextjs",
+              "ts",
+              "tanstack",
+              "shadcnui",
+              "tailwind"
+            ],
+            "words": [
+              "Next.js", 
+              "TypeScript", 
+              "TanStack Query",
+              "shadcn/ui (Radix-based components)", 
+              "Tailwind CSS"
+            ]
+          },
+          "images": [
+            "images/projects/cocktail_browser/1.png",
+            "images/projects/cocktail_browser/2.png",
+            "images/projects/cocktail_browser/3.png",
+            "images/projects/cocktail_browser/4.png",
+            "images/projects/cocktail_browser/5.png"
+          ],
           "website": "https://recruitment-frontend-solvro.vercel.app/",
           "repository": "https://github.com/robuspospolitus/recruitment-frontend-solvro"
         },
@@ -74,7 +116,10 @@
           "photo": "images/projects/portfolio/0.png",
           "description": "My own portfolio website showing off my skillset with additional desktop experience simulation.",
           "text": [],
-          "stack": [],
+          "stack": {
+            "icons": [],
+            "words": []
+          },
           "images": [],
           "website": "/",
           "repository": "https://github.com/robuspospolitus/portfolio"
@@ -97,7 +142,8 @@
             "5. Solar system",
             "3D showcase",
             "6. Drawing app",
-            "-"
+            "7. Tutoring platform",
+            "8. Mushroom gathering"
           ]
         }
       ]

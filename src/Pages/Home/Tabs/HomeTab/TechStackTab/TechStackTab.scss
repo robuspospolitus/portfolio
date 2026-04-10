@@ -5,7 +5,8 @@
     p {
         text-align: center;
     }
-    .carousel {
+}
+.carousel {
         display: flex;
         width: 80%;
         height: var(--size-xl);
@@ -30,7 +31,6 @@
         width: max-content;
         animation: carousel 20s linear infinite;
     }
-}
 @keyframes carousel {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
