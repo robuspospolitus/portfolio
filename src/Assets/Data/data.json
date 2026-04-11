@@ -1,21 +1,21 @@
 {
    "files":[
     {
-          "id": 1,
-          "type": "text",
-          "source": "images/folder.png",
-          "title": "About Me",
-          "text": [
-            "Hi, I'm Nadia",
-            "Creating immersive, high-fidelity experiences",
-            "I am an ambitious 20 years old student on a 2nd semester of Computer Enginnering and have been actively developing as a front-end developer for the past few years.",
-            "Tech stack: ",
-            "",
-            "experience",
-            "projects",
-            "contact"
-          ]
-        },
+      "id": 1,
+      "type": "text",
+      "source": "images/folder.png",
+      "title": "About Me",
+      "text": [
+        "Hi, I'm Nadia",
+        "Creating immersive, high-fidelity experiences",
+        "I am an ambitious 20 years old student on a 2nd semester of Computer Enginnering and have been actively developing as a front-end developer for the past few years.",
+        "Tech stack: ",
+        "",
+        "experience",
+        "projects",
+        "contact"
+      ]
+    },
     {
       "id": 2,
       "type": "folder",
@@ -23,207 +23,264 @@
       "title": "Projects",
       "content": [
         {
-          "id": 4,
-          "type": "project",
+          "id": 1,
+          "type": "folder",
           "source": "images/folder.png",
-          "title": "Flower Grove",
-          "date": "2022",
-          "photo": "images/projects/flower_grove/0.png",
-          "description": "Frontend web project focused strictly on styling and UI. Made with React Router.",
-          "text": [
-            "*About",
-            "Flower Grove is a front-end project focused on building a clean, visually consistent user interface using modern React and SCSS.",
-            "The application serves as a portfolio piece demonstrating UI implementation, component structure, and styling architecture.",
-            "The project presents a thematic landing page centered around flowers, combining structured layout design with aesthetic presentation.",
-            "*It was created to showcase:",
-            "- ability to translate design ideas into code",
-            "- consistent styling using SCSS",
-            "- reusable React component structure",
-            "- responsive layout implementation"
-          ],
-          "stack": {
-            "icons": [
-              "react",
-              "sass",
-              "js",
-              "vite"
-            ],
-            "words": [
-              "React - component-based architecture",
-              "SCSS (Sass) - modular and maintainable styling",
-              "JavaScript",
-              "Vite - fast frontend build tool with instant reload."
-            ]
-          },
-          "images": [
-            "images/projects/flower_grove/0.png",
-            "images/projects/flower_grove/1.png",
-            "images/projects/flower_grove/2.png",
-            "images/projects/flower_grove/3.png",
-            "images/projects/flower_grove/4.png",
-            "images/projects/flower_grove/5.png"
-          ],
-          "website": "https://flower-grove.vercel.app/",
-          "repository": "https://github.com/robuspospolitus/flower-grove"
-
-        },
-        {
-          "id": 3,
-          "type": "project",
-          "source": "images/folder.png",
-          "title": "Girly Time Tracker",
-          "date": "2025",
-          "photo": "images/projects/girly_time_tracker/0.png",
-          "description": "Desktop Electron React app for time measuring. Includes different formats of input, categories, statistics, themes and sounds.",
-          "text": [
-            "*About",
-            "Girly Time Tracker is a desktop time tracking application built with React, TypeScript, and Electron, designed to combine structured activity tracking with a customizable and visually engaging interface.",
-            "The project was developed as a practical exploration of desktop application architecture using modern frontend technologies. It focuses on state management, local data persistence, theming systems, and production build configuration within the Electron ecosystem.",
-            "This project is now completed and represents a finished learning milestone in building and packaging cross-platform desktop applications.",
-            "Although it is no longer under active development, feedback, suggestions, and issue reports are always welcome.",
-            "*Time tracking",
-            "The application allows users to track time within separate activity categories using four different input methods",
-            "- Manual Entry. Enter a specific number of hours and minutes spent on an activity.",
-            "- Time Range Input. Provide a start and end time (e.g., 15:30–19:20), and the app automatically calculates the duration.",
-            "- Stopwatch Mode. Start tracking, leave the app running during the activity, and stop it when finished.",
-            "- Timer Mode. Set a predefined duration for an activity. The timer ends automatically when the selected time is reached.",
-            "This flexibility allows users to adapt time tracking to different workflows and use cases (work, training, hobbies, etc.).",
-            "*Categories",
-            "Time entries are organized into separate categories. Users can:",
-            "- Create and delete categories freely",
-            "- Decide whether to remove associated data when deleting a category",
-            "- Restore previously stored data by recreating a category with the same name",
-            "This approach keeps different activity types (e.g., strength training vs. cardio, work vs. personal projects) clearly separated.",
-            "*Data storing",
-            "All user data is stored locally on the user's computer.",
-            "- The application does not connect to any external servers",
-            "- No data is transmitted or collected",
-            "- All information is stored in a local JSON file",
-            "When the application launches, it automatically loads and synchronizes with the local file, allowing immediate access and modification of stored data.",
-            "This desktop-first approach ensures simplicity, privacy, and full user control over stored information.",
-            "*Themes",
-            "The app includes multiple customizable color themes, including both light and dark variants. The default theme is light orange. The selected theme is saved locally. The application automatically launches with the previously selected theme. The theming system was implemented to improve user experience and demonstrate UI state persistence."
-          ],
-          "stack": {
-            "icons": [
-              "react",
-              "electron",
-              "sass",
-              "ts"
-            ],
-            "words": [
-              "Electron - bundled Chromium build running natively on macOS, Windows, and Linux",
-              "React - component-based architecture",
-              "TypeScript - strongly typed programming language that builds on JavaScript",
-              "SCSS (Sass) - modular and maintainable styling"
-            ]
-          },
-          "images": [
-            "images/projects/girly_time_tracker/0.png",
-            "images/projects/girly_time_tracker/1.png",
-            "images/projects/girly_time_tracker/2.png",
-            "images/projects/girly_time_tracker/3.png"
-          ],
-          "website": "",
-          "repository": "https://github.com/robuspospolitus/girly-time-tracker"
+          "title": "Personal",
+          "content": [
+            {
+              "id": 4,
+              "type": "project",
+              "source": "images/folder.png",
+              "title": "Flower Grove",
+              "date": "2022",
+              "photo": "images/projects/flower_grove/0.png",
+              "description": "Frontend web project focused strictly on styling and UI. Made with React Router.",
+              "text": [
+                "*About",
+                "Flower Grove is a front-end project focused on building a clean, visually consistent user interface using modern React and SCSS.",
+                "The application serves as a portfolio piece demonstrating UI implementation, component structure, and styling architecture.",
+                "The project presents a thematic landing page centered around flowers, combining structured layout design with aesthetic presentation.",
+                "*It was created to showcase:",
+                "- ability to translate design ideas into code",
+                "- consistent styling using SCSS",
+                "- reusable React component structure",
+                "- responsive layout implementation"
+              ],
+              "stack": {
+                "icons": [
+                  "react",
+                  "sass",
+                  "js",
+                  "vite"
+                ],
+                "words": [
+                  "React - component-based architecture",
+                  "SCSS (Sass) - modular and maintainable styling",
+                  "JavaScript",
+                  "Vite - fast frontend build tool with instant reload."
+                ]
+              },
+              "images": [
+                "images/projects/flower_grove/0.png",
+                "images/projects/flower_grove/1.png",
+                "images/projects/flower_grove/2.png",
+                "images/projects/flower_grove/3.png",
+                "images/projects/flower_grove/4.png",
+                "images/projects/flower_grove/5.png"
+              ],
+              "website": "https://flower-grove.vercel.app/",
+              "repository": "https://github.com/robuspospolitus/flower-grove"
+    
+            },
+            {
+              "id": 3,
+              "type": "project",
+              "source": "images/folder.png",
+              "title": "Girly Time Tracker",
+              "date": "2025",
+              "photo": "images/projects/girly_time_tracker/0.png",
+              "description": "Desktop Electron React app for time measuring. Includes different formats of input, categories, statistics, themes and sounds.",
+              "text": [
+                "*About",
+                "Girly Time Tracker is a desktop time tracking application built with React, TypeScript, and Electron, designed to combine structured activity tracking with a customizable and visually engaging interface.",
+                "The project was developed as a practical exploration of desktop application architecture using modern frontend technologies. It focuses on state management, local data persistence, theming systems, and production build configuration within the Electron ecosystem.",
+                "This project is now completed and represents a finished learning milestone in building and packaging cross-platform desktop applications.",
+                "Although it is no longer under active development, feedback, suggestions, and issue reports are always welcome.",
+                "*Time tracking",
+                "The application allows users to track time within separate activity categories using four different input methods",
+                "- Manual Entry. Enter a specific number of hours and minutes spent on an activity.",
+                "- Time Range Input. Provide a start and end time (e.g., 15:30–19:20), and the app automatically calculates the duration.",
+                "- Stopwatch Mode. Start tracking, leave the app running during the activity, and stop it when finished.",
+                "- Timer Mode. Set a predefined duration for an activity. The timer ends automatically when the selected time is reached.",
+                "This flexibility allows users to adapt time tracking to different workflows and use cases (work, training, hobbies, etc.).",
+                "*Categories",
+                "Time entries are organized into separate categories. Users can:",
+                "- Create and delete categories freely",
+                "- Decide whether to remove associated data when deleting a category",
+                "- Restore previously stored data by recreating a category with the same name",
+                "This approach keeps different activity types (e.g., strength training vs. cardio, work vs. personal projects) clearly separated.",
+                "*Data storing",
+                "All user data is stored locally on the user's computer.",
+                "- The application does not connect to any external servers",
+                "- No data is transmitted or collected",
+                "- All information is stored in a local JSON file",
+                "When the application launches, it automatically loads and synchronizes with the local file, allowing immediate access and modification of stored data.",
+                "This desktop-first approach ensures simplicity, privacy, and full user control over stored information.",
+                "*Themes",
+                "The app includes multiple customizable color themes, including both light and dark variants. The default theme is light orange. The selected theme is saved locally. The application automatically launches with the previously selected theme. The theming system was implemented to improve user experience and demonstrate UI state persistence."
+              ],
+              "stack": {
+                "icons": [
+                  "react",
+                  "electron",
+                  "sass",
+                  "ts"
+                ],
+                "words": [
+                  "Electron - bundled Chromium build running natively on macOS, Windows, and Linux",
+                  "React - component-based architecture",
+                  "TypeScript - strongly typed programming language that builds on JavaScript",
+                  "SCSS (Sass) - modular and maintainable styling"
+                ]
+              },
+              "images": [
+                "images/projects/girly_time_tracker/0.png",
+                "images/projects/girly_time_tracker/1.png",
+                "images/projects/girly_time_tracker/2.png",
+                "images/projects/girly_time_tracker/3.png"
+              ],
+              "website": "",
+              "repository": "https://github.com/robuspospolitus/girly-time-tracker"
+            },
+            {
+              "id": 2,
+              "type": "project",
+              "source": "images/folder.png",
+              "title": "Cocktail Browser",
+              "date": "22 march 2026",
+              "photo": "images/projects/cocktail_browser/0.png",
+              "description": "Next.js web app for cocktail browsing using external API. Using Typescript, TanstackQuery and shadcn components.",
+              "text": [
+                "*About",
+                "A modern, responsive web application for exploring cocktails, built with a focus on usability, clean design, and performance. The app allows users to browse, search, and discover cocktails, view detailed ingredient information, and save their favorites for quick access.",
+                "*Features",
+                "- Browse a collection of cocktails fetched from an external API.",
+                "-Mark cocktails as favorites and easily access them later.",
+                "- Quickly find cocktails using selected fields such as name, category, or glass type.",
+                "- Explore full cocktail details, including ingiedients, instructions and additional metadata from the API",
+                "- Responsive Design",
+                "- Optimized for both desktop and mobile devices.",
+                "*Additional Notes",
+                "The application uses TanStack Query for efficient data fetching, caching, and synchronization.",
+                "Favorites are stored locally (e.g. in LocalStorage) to persist user preferences.",
+                "UI components are built with accessibility and consistency in mind using shadcn/ui.",
+                "Created as a recruitment project with emphasis on code quality, UX, and modern web development practices."
+              ],
+              "stack": {
+                "icons": [
+                  "nextjs",
+                  "ts",
+                  "tanstack",
+                  "shadcnui",
+                  "tailwind",
+                  "vite"
+                ],
+                "words": [
+                  "Next.js", 
+                  "TypeScript", 
+                  "TanStack Query",
+                  "shadcn/ui (Radix-based components)", 
+                  "Tailwind CSS",
+                  "Vite"
+                ]
+              },
+              "images": [
+                "images/projects/cocktail_browser/1.png",
+                "images/projects/cocktail_browser/2.png",
+                "images/projects/cocktail_browser/3.png",
+                "images/projects/cocktail_browser/4.png",
+                "images/projects/cocktail_browser/5.png"
+              ],
+              "website": "https://recruitment-frontend-solvro.vercel.app/",
+              "repository": "https://github.com/robuspospolitus/recruitment-frontend-solvro"
+            },
+            {
+              "id": 1,
+              "type": "project",
+              "source": "images/folder.png",
+              "title": "Portfolio",
+              "date": "in development",
+              "photo": "images/projects/portfolio/0.png",
+              "description": "My own portfolio website showing off my skillset with additional desktop experience simulation.",
+              "text": [
+                "*About",
+                "An interactive portfolio built as a virtual desktop experience inspired by pixel art and the Frutiger Aero aesthetic. The project combines a nostalgic visual style with modern web technologies to create an immersive, ocean-themed interface where each element reflects a dynamic, fluid digital environment.",
+                "The application is designed not just as a showcase, but as an experience — inviting users to explore projects, interact with UI elements, and engage with mini applications and games embedded within the interface.",
+                "This project serves as both a portfolio showcasing my work in web development and a creative experiment blending design, interaction, and storytelling in a browser environment",
+                "*Features",
+                "- Desktop-like Interface: A UI inspired by classic operating systems, reimagined with a modern and artistic approach.",
+                "- Unique Visual Style: Pixel art combined with Frutiger Aero aesthetics, creating a vibrant and nostalgic atmosphere.",
+                "- Structured Project Showcase: Organized “folders” presenting various projects and development experience. (available in the Desktop Experience '/desktop' section)",
+                "- Interactive Mini Apps & Games: Built-in small applications to enhance user engagement and exploration. (in-progress)",
+                "- Smooth User Experience: Responsive and dynamic interactions designed to feel fluid and intuitive.",
+                "*Purpose",
+                "Programming is not just about building applications — it's about creating experiences.",
+                "This portfolio reflects my approach to development: combining technical skills with creativity to deliver something memorable, engaging, and visually distinct."
+              ],
+              "stack": {
+                "icons": [
+                  "react",
+                  "ts",
+                  "sass",
+                  "vite"
+                ],
+                "words": [
+                  "React - component-based architecture",
+                  "TypeScript - strongly typed programming language that builds on JavaScript",
+                  "Vite - fast frontend build tool with instant reload.",
+                  "SCSS (Sass) - modular and maintainable styling"
+                ]
+              },
+              "images": [
+                "images/projects/portfolio/0.png"
+              ],
+              "website": "/",
+              "repository": "https://github.com/robuspospolitus/portfolio"
+            }
+          ]
         },
         {
           "id": 2,
-          "type": "project",
+          "type": "folder",
           "source": "images/folder.png",
-          "title": "Cocktail Browser",
-          "date": "22 march 2026",
-          "photo": "images/projects/cocktail_browser/0.png",
-          "description": "Next.js web app for cocktail browsing using external API. Using Typescript, TanstackQuery and shadcn components.",
-          "text": [
-            "*About",
-            "A modern, responsive web application for exploring cocktails, built with a focus on usability, clean design, and performance. The app allows users to browse, search, and discover cocktails, view detailed ingredient information, and save their favorites for quick access.",
-            "*Features",
-            "- Browse a collection of cocktails fetched from an external API.",
-            "-Mark cocktails as favorites and easily access them later.",
-            "- Quickly find cocktails using selected fields such as name, category, or glass type.",
-            "- Explore full cocktail details, including ingiedients, instructions and additional metadata from the API",
-            "- Responsive Design",
-            "- Optimized for both desktop and mobile devices.",
-            "*Additional Notes",
-            "The application uses TanStack Query for efficient data fetching, caching, and synchronization.",
-            "Favorites are stored locally (e.g. in LocalStorage) to persist user preferences.",
-            "UI components are built with accessibility and consistency in mind using shadcn/ui.",
-            "Created as a recruitment project with emphasis on code quality, UX, and modern web development practices."
-          ],
-          "stack": {
-            "icons": [
-              "nextjs",
-              "ts",
-              "tanstack",
-              "shadcnui",
-              "tailwind",
-              "vite"
-            ],
-            "words": [
-              "Next.js", 
-              "TypeScript", 
-              "TanStack Query",
-              "shadcn/ui (Radix-based components)", 
-              "Tailwind CSS",
-              "Vite"
-            ]
-          },
-          "images": [
-            "images/projects/cocktail_browser/1.png",
-            "images/projects/cocktail_browser/2.png",
-            "images/projects/cocktail_browser/3.png",
-            "images/projects/cocktail_browser/4.png",
-            "images/projects/cocktail_browser/5.png"
-          ],
-          "website": "https://recruitment-frontend-solvro.vercel.app/",
-          "repository": "https://github.com/robuspospolitus/recruitment-frontend-solvro"
+          "title": "Collaborative",
+          "content": [
+            {
+              "id": 1,
+              "type": "project",
+              "source": "images/folder.png",
+              "title": "Dwarf Hunt Wrocław",
+              "date": "April 2026 - currently",
+              "photo": "",
+              "description": "My own portfolio website showing off my skillset with additional desktop experience simulation.",
+              "text": [
+                "*Position: Front-end developer",
+                "*About",
+                "The Dwarf Hunt Wroclaw app is a mobile social game inspired by the real-life dwarves of Wroclaw. It allows users to discover, collect, and track dwarves scattered throughout the city.",
+                "Each gnome has a unique appearance, description, and rarity level—from common to legendary. Users can create accounts, save their finds, earn achievements, and add friends with whom they can compete or collaborate in the search for new gnomes.",
+                "The app is in early development. Currently, the project is primarily designed for browser-based testing. The app also works on mobile devices, but this requires additional configuration beyond the standard launch via docker-compose.",
+                "*My contribution",
+                "- *to be updated*"
+              ],
+              "stack": {
+                "icons": [
+                  "react",
+                  "ts",
+                  "sass",
+                  "docker",
+                  "capacitor",
+                  "axios",
+                  "vite"
+                ],
+                "words": [
+                  "React - component-based architecture",
+                  "TypeScript - strongly typed programming language that builds on JavaScript",
+                  "SCSS (Sass) - modular and maintainable styling",
+                  "Docker - containerization software for developers and teams",
+                  "Vite - fast frontend build tool with instant reload.",
+                  "Capacitor - open source native runtime for building Web Native apps",
+                  "Axios - promise based HTTP client for the browser and node.js"
+                ]
+              },
+              "images": [
+              ],
+              "repository": "https://gitlab.com/gwarnickn/dwarf-mobile-app"
+            }
+          ]
         },
         {
-          "id": 1,
-          "type": "project",
-          "source": "images/folder.png",
-          "title": "Portfolio",
-          "date": "in development",
-          "photo": "images/projects/portfolio/0.png",
-          "description": "My own portfolio website showing off my skillset with additional desktop experience simulation.",
-          "text": [
-            "*About",
-            "An interactive portfolio built as a virtual desktop experience inspired by pixel art and the Frutiger Aero aesthetic. The project combines a nostalgic visual style with modern web technologies to create an immersive, ocean-themed interface where each element reflects a dynamic, fluid digital environment.",
-            "The application is designed not just as a showcase, but as an experience — inviting users to explore projects, interact with UI elements, and engage with mini applications and games embedded within the interface.",
-            "This project serves as both a portfolio showcasing my work in web development and a creative experiment blending design, interaction, and storytelling in a browser environment",
-            "*Features",
-            "- Desktop-like Interface: A UI inspired by classic operating systems, reimagined with a modern and artistic approach.",
-            "- Unique Visual Style: Pixel art combined with Frutiger Aero aesthetics, creating a vibrant and nostalgic atmosphere.",
-            "- Structured Project Showcase: Organized “folders” presenting various projects and development experience. (available in the Desktop Experience '/desktop' section)",
-            "- Interactive Mini Apps & Games: Built-in small applications to enhance user engagement and exploration. (in-progress)",
-            "- Smooth User Experience: Responsive and dynamic interactions designed to feel fluid and intuitive.",
-            "*Purpose",
-            "Programming is not just about building applications — it's about creating experiences.",
-            "This portfolio reflects my approach to development: combining technical skills with creativity to deliver something memorable, engaging, and visually distinct."
-          ],
-          "stack": {
-            "icons": [
-              "react",
-              "ts",
-              "sass",
-              "vite"
-            ],
-            "words": [
-              "React - component-based architecture",
-              "TypeScript - strongly typed programming language that builds on JavaScript",
-              "Vite - fast frontend build tool with instant reload.",
-              "SCSS (Sass) - modular and maintainable styling"
-            ]
-          },
-          "images": [
-            "images/projects/portfolio/0.png"
-          ],
-          "website": "/",
-          "repository": "https://github.com/robuspospolitus/portfolio"
-        },
-        {
-          "id": 5,
+          "id": 3,
           "type": "text",
           "source": "images/doc.png",
           "title": "Future ideas",

@@ -1,12 +1,16 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useMemo } from 'react';
 import './ProjectsTab.scss';
 import data from '../../../../assets/Data/data.json';
 import '../HomeTab/TechStackTab/TechStackTab.scss';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
-const projects = data.files[1].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id});
+
 
 export default function ProjectsTab() {
+    const personal = useMemo(() => data.files[1].content && data.files[1].content[0].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id}), [data]);
+    const collaborative = useMemo(() => data.files[1].content && data.files[1].content[1].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id}), [data]);
+    
     const [chosenProject, setChosenProject] = useState(0);
+    const [projects, setProjects] = useState(personal);
     const [isActive, setIsActive] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(document.createElement("div"));
 
@@ -25,18 +29,24 @@ export default function ProjectsTab() {
                     <h1>Projects</h1>
                     <p>from the newest</p>
                 </div>
+                <section className="full-section">
+                    <div className="side-to-side">
+                        <p onClick={() => setProjects(personal)} className={`border-bottom-animation ${projects === personal && 'option-active'}`}>Personal</p>
+                        <p onClick={() => setProjects(collaborative)} className={`border-bottom-animation ${projects === collaborative && 'option-active'}`}>Collaborative</p>
+                    </div>
+                </section>
                 <div className="items-wrapper">
                     {projects?.map((project) => 
-                    <div key={project.id}>
-                        <section>
-                            <div className='item-wrapper pixel-corners'>
-                                <div className='item-content pixel-corners'>
-                                    <Project data={project} onClick={handleShow}/>
+                        <div key={project.id}>
+                            <section>
+                                <div className='item-wrapper pixel-corners'>
+                                    <div className='item-content pixel-corners'>
+                                        <Project data={project} onClick={handleShow}/>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
-                )}
+                            </section>
+                        </div>
+                    )}
                 </div>
             </div>
             <div className={`project-info ${isActive && "project-active"}`}>

@@ -16,11 +16,25 @@
                 opacity: 0.5;
             }
         }
+        .side-to-side {
+            gap: var(--size);
+            height: var(--size-l);
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            p {
+                text-align: center;
+            }
+            .option-active {
+                border-bottom: 2px solid white;
+            }
+        }
         .items-wrapper {
             width: 100%;
             display: grid;
-            grid-template-columns: auto auto;
+            grid-template-columns: 50% 50%;
             align-items: center;
+            margin-top: var(--size-l);
             section {
                 padding-top: var(--size-s);
                 padding-bottom: var(--size-s);

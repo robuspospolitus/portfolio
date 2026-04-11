@@ -28,7 +28,7 @@ export default function SemiCodeSection() {
 
 function WrittenCode({text, style}:{text: string, style?: CSSProperties}) {
     const { ref, inView } = useInView({
-        threshold: 1,
+        threshold: 0,
     });
     const [finalText, setFinalText] = useState("");
 
