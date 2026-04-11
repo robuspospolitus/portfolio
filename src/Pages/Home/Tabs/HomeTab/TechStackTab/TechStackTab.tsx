@@ -31,6 +31,7 @@ const CarouselImages = () => {
             <img src="https://skillicons.dev/icons?i=next" />
             <img src="https://skillicons.dev/icons?i=vue" />
             <img src="https://skillicons.dev/icons?i=electron" />
+            <img src="https://skills.syvixor.com/api/icons?i=axios" alt="" />
             <img src="https://skillicons.dev/icons?i=git" />
             <img src="https://skillicons.dev/icons?i=github" />
             <img src="https://skillicons.dev/icons?i=linux" />
