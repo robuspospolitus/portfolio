@@ -6,6 +6,14 @@
     display: flex;
     align-self: center;
 }
+.box-shadow {
+    background-color: #00000050;
+    border-radius: var(--size);
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
+}
 
 .show-off-container-content {
     flex: 1;
@@ -15,8 +23,19 @@
     background-color: var(--home-color);
     color: white;
     padding: var(--size);
-    h3 {
-        font-size: var(--font-size-h);
+    .icon-and-text {
+        justify-content: center;
+        align-items: center;
+        svg {
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            min-height: 40px;
+        }
+        h3 {
+            text-align: center;
+            font-size: var(--font-size-h);
+        }
     }
     p {
         font-size: var(--size);
@@ -26,43 +45,47 @@
 
 .pink {
     background-color: var(--pink-opacity);
-    .show-off-container-content h3 {
+    .show-off-container-content h3, svg {
         color: var(--pink);
     }
 }
 .blue {
     background-color: var(--blue-opacity);
-    .show-off-container-content h3 {
+    .show-off-container-content h3, svg {
         color: var(--blue);
     }
 }
 .yellow {
     background-color: var(--yellow-opacity);
-    .show-off-container-content h3 {
+    .show-off-container-content h3, svg {
         color: var(--yellow);
     }
 }
 .green {
     background-color: var(--green-opacity);
-    .show-off-container-content h3 {
+    .show-off-container-content h3, svg {
         color: var(--green);
     }
 }
 .orange {
     background-color: var(--orange-opacity);
-    .show-off-container-content h3 {
+    .show-off-container-content h3, svg {
         color: var(--orange);
     }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 720px) {
     .moving-cards {
         .side-to-side {
             flex-direction: column;
             margin-bottom: var(--size);
         }
-        .show-off-container {
+        .box-shadow {
             width: 80% !important;
         }
+        .icon-and-text { 
+            flex-direction: row;
+        }
+        p {text-align: center;}
     }
 }

@@ -9,12 +9,13 @@ type MovingCardProps = {
 export default function MovingCard({className="", style, children}:MovingCardProps) {
     const ref = useHoverMove();
     return (
-        <div ref={ref} className={`show-off-container pixel-corners ${className}`} style={style}>
+      <div className="box-shadow" style={style}>
+        <div ref={ref} className={`show-off-container pixel-corners ${className}`} >
           <div className="show-off-container-content pixel-corners">
             {children}
-
           </div>
         </div>
+      </div>
     )
 }
 
@@ -28,55 +29,41 @@ function useHoverMove() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
     const animate = () => {
       current.current.x += (target.current.x - current.current.x) * 0.1;
       current.current.y += (target.current.y - current.current.y) * 0.1;
-
       el.style.transform = `translate(${current.current.x}px, ${current.current.y}px)`;
 
-      if (
-        Math.abs(current.current.x) < 0.01 &&
+      if (Math.abs(current.current.x) < 0.01 &&
         Math.abs(current.current.y) < 0.01 &&
         target.current.x === 0 &&
-        target.current.y === 0
-      ) {
+        target.current.y === 0) {
         rafId.current = null;
         return;
       }
-
       rafId.current = requestAnimationFrame(animate);
     };
-
     const startAnimation = () => {
       if (rafId.current === null) {
         rafId.current = requestAnimationFrame(animate);
       }
     };
-
     const handleMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
-
-      target.current.x = (e.clientX - rect.width / 2 - rect.left) / 15;
-      target.current.y = (e.clientY - rect.height / 2 - rect.top) / 15;
-
+      target.current.x = (e.clientX - rect.width / 2 - rect.left) / 10;
+      target.current.y = (e.clientY - rect.height / 2 - rect.top) / 10;
       startAnimation();
     };
-
     const handleLeave = () => {
       target.current.x = 0;
       target.current.y = 0;
-
       startAnimation();
     };
-
     el.addEventListener("mousemove", handleMove);
     el.addEventListener("mouseleave", handleLeave);
-
     return () => {
       el.removeEventListener("mousemove", handleMove);
       el.removeEventListener("mouseleave", handleLeave);
-
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
