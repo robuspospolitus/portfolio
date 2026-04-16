@@ -1,5 +1,7 @@
 .tech-stack-tab {
     h2 {
+        white-space: nowrap;
+        text-overflow: clip;
         max-height: var(--font-size-xl);
     }
     p {

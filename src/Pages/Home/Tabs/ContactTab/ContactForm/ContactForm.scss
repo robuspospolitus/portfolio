@@ -5,8 +5,7 @@
         flex-direction: column;
         align-items: center;
         box-shadow: inset 0 0 16px 0 black;
-        padding-top: var(--size);
-        padding-bottom: var(--size);
+        padding: var(--size);
         .input {
             display: flex;
             flex-direction: column;

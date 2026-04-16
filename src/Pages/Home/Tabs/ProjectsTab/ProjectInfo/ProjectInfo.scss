@@ -73,7 +73,7 @@
     h2 {
         font-size: var(--font-size-xl);
         text-align: center;
-        max-height: var(--font-size-xl);
+        max-height: fit-content;
         line-height: var(--font-size-xl);
         margin-top: calc((300px - var(--font-size-xl)) / 2);
         margin-bottom: calc((300px - var(--font-size-xl)) / 2);
@@ -81,7 +81,7 @@
         color: transparent;
         background-clip: text;
         transition: all 0.3s;
-        width: max-content;
+        width: auto;
         align-self: center;
         &:hover {
             font-size: calc(var(--font-size-xl) + 2px);
@@ -112,4 +112,6 @@
 }
 .project-active {
     transform: translateX(0);
+}
+@media screen and (max-width: 400px) {
 }

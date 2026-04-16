@@ -8,6 +8,9 @@
         }
         .contact-p {
             width: 50%;
+            .written-text {
+                max-height: var(--size);
+            }
         }
     }
 }

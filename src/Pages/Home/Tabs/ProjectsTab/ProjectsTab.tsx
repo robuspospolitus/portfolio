@@ -38,7 +38,7 @@ export default function ProjectsTab() {
                 <div className="items-wrapper">
                     {projects?.map((project) => 
                         <div key={project.id}>
-                            <section>
+                            <section className='project'>
                                 <div className='item-wrapper pixel-corners'>
                                     <div className='item-content pixel-corners'>
                                         <Project data={project} onClick={handleShow}/>

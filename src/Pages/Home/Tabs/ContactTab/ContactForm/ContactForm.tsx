@@ -17,7 +17,7 @@ export default function ContactForm() {
 
     return (
         <section className="full-section">
-            <h2 className='border-bottom-animation' style={{maxHeight: "var(--font-size-xl)", textAlign:"center"}}>Ready for work? E-mail me right now</h2>
+            <h2 className='border-bottom-animation' style={{textAlign:"center", maxHeight:"fit-content", borderBottom: "2px solid transparent"}}>Ready for work? E-mail me right now</h2>
             <form onSubmit={onSubmit} className="pixel-corners">
                 <input type="hidden" name="from_name" value="Portfolio Form"/>
                 <div className="input">

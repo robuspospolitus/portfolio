@@ -17,7 +17,7 @@ export default function FloatingObject({leftx, rightx, delayTime = 0, time=20, s
 
     return (
         <div className='floatingobject' style={handlePosition()}>
-            <img src={src} alt={`Floating object ${src}`} />
+            <img src={src} alt={`Floating object ${src}`} draggable={false}/>
         </div>
     )
 }

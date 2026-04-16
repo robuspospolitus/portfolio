@@ -18,7 +18,7 @@
         }
         .side-to-side {
             gap: var(--size);
-            height: var(--size-l);
+            min-height: var(--size-l);
             width: 100%;
             align-items: center;
             justify-content: center;
@@ -125,7 +125,7 @@
 }
 
 @media screen and (max-width: 400px) {
-    section {
+    .project {
         padding: 0;
     }
 }
