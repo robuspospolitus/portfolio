@@ -5,6 +5,7 @@ import ProjectsTab from './Tabs/ProjectsTab/ProjectsTab';
 import ContactTab from './Tabs/ContactTab/ContactTab';
 import Background from '../../Assets/Images/image.png';
 import Footer from './Components/Footer/Footer';
+import FloatingObject from './Components/FloatingObject/FloatingObject';
 import '../../styles/pixel-corners.scss';
 import './Home.scss';
 
@@ -28,6 +29,36 @@ export default function Home() {
                 </main>
                 <Footer/>
             </div>
+
+            {/* Floating objects */}
+            <FloatingObject 
+                leftx={0} 
+                delayTime={-5} 
+                time={12}
+                src="/images/floating_objects/CuteTurtle.png"/>
+            <FloatingObject 
+                leftx={120} 
+                delayTime={-2} 
+                time={15}
+                src="/images/floating_objects/Starfish.png"/>
+            <FloatingObject 
+                leftx={300} 
+                delayTime={-9} 
+                time={15}
+                src="/images/floating_objects/Fishuke.png"/>
+            <FloatingObject 
+                rightx={300} 
+                delayTime={-1} 
+                src="/images/floating_objects/CuteTurtle_color.png"/>
+            <FloatingObject 
+                rightx={120} 
+                delayTime={-7} 
+                time={12}
+                src="/images/floating_objects/Fishuke.png"/>
+            <FloatingObject 
+                rightx={0} 
+                delayTime={-5} 
+                src="/images/floating_objects/KissFish.png"/>
         </>
     )
 }

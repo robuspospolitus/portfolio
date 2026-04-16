@@ -1,0 +1,30 @@
+.floatingobject {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    animation: floatingObjects linear infinite, rotateObjects linear infinite;
+    img {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        height: 100%;
+        width: 100%;
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    }
+}
+
+@keyframes floatingObjects{
+    from {
+        top: calc(100vh + 80px)
+    } to {
+        top: -80px;
+    }
+}
+@keyframes rotateObjects {
+    0% {
+        rotate: 10deg;
+    } 50% {
+        rotate: -10deg;
+    } 100% {
+        rotate: 10deg;
+    }
+}
