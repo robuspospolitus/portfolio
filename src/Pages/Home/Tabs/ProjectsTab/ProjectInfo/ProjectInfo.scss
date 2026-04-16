@@ -53,8 +53,9 @@
         margin: var(--size);
         font-size: var(--font-size-h);
         max-height: var(--font-size-h);
-        width: max-content;
+        width: fit-content;
         align-self: center;
+        border-bottom: 2px solid transparent;
     }
     button {
         z-index: 5;
@@ -99,6 +100,7 @@
         gap: var(--size-s);
         padding: var(--size);
         box-shadow: 0 0 64px black;
+        background-color: rgba(0, 0, 0, 0.5);
         &::after {
             z-index: 5;
             background: linear-gradient(to right, black 0%, transparent 30%, transparent 70%, black 100%);

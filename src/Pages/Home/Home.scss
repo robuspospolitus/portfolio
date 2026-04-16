@@ -25,9 +25,17 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    gap: var(--size-xxs);
     position: relative;
     z-index: 2;
+    .normal-tabs {
+        display: flex;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        gap: var(--size-xxs);
+        position: relative;
+        z-index: 2;
+    }
     .home-tab {
         width: 100px;
         background-color: var(--home-border);
@@ -107,8 +115,7 @@
 }
 @media screen and (max-width: 660px) {
     .desktop-tab {
-        z-index: 5;
-        position: fixed;
+        z-index: 0;
         right: 10px !important;
         box-sizing: border-box;
         border: none !important;
@@ -121,6 +128,11 @@
             display: block !important;
             height: var(--font-size-h);
         }
+    }
+}
+@media screen and (max-width: 428px) {
+    #home-content {
+        border-top-right-radius: 0;
     }
 }
 @keyframes gradient {

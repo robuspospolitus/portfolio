@@ -19,7 +19,7 @@ export default function ProjectInfo({data, onClick}:ProjectProps) {
         <> 
             {/* Title */}
             <button onClick={handleOnExit} className='pixel-buttons'>{"<"}</button>
-            <h2>{data.title}</h2>
+            <div style={{maxHeight: "300px"}}><h2>{data.title}</h2></div>
             <div className="project-img-wrapper">
                 {data.photo &&
                     <img src={data.photo} alt={data.title + " main image"} />
@@ -34,7 +34,7 @@ export default function ProjectInfo({data, onClick}:ProjectProps) {
             )}
 
             {/* Tech Stack */}
-            <h3 className='border-bottom-animation'>Tech stack</h3>
+            <h3>Tech stack</h3>
             <p>Key technologies used in this app:</p>
             <ul>
                 {data.stack?.words?.length ? data.stack?.words?.map((stack, key) => (
