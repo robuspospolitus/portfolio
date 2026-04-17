@@ -84,7 +84,7 @@ function Project({data, onClick}:ProjectProps) {
     return (
         <>  
             <div className="img-section">
-                <img src={data?.photo || 'images/example.png'} alt={data?.title+" photo"}/>
+                <img src={data?.photo || 'images/example.png'} alt={data?.title+" photo"} draggable={false}/>
             </div>
             <div className="description-section">
                 <h2>{data?.title}</h2>

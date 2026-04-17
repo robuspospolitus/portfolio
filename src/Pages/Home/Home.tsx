@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import { useState } from 'react';
 import HomeTab from './Tabs/HomeTab/HomeTab';
 import ProjectsTab from './Tabs/ProjectsTab/ProjectsTab';
@@ -8,7 +8,7 @@ import Footer from './Components/Footer/Footer';
 import FloatingObject from './Components/FloatingObject/FloatingObject';
 import '../../styles/pixel-corners.scss';
 import './Home.scss';
-import ComputerIcon from '../../assets/Logos/Computer';
+// import ComputerIcon from '../../assets/Logos/Computer';
 
 export default function Home() {
     const [activeTab, setActiveTab] = useState(1);
@@ -23,18 +23,18 @@ export default function Home() {
                         <div className={`home-tab ${activeTab===2 ? "active-tab pixel-corners-top":"pixel-corners"}`} onClick={()=>setActiveTab(2)}>Projects</div>
                         <div className={`home-tab ${activeTab===3 ? "active-tab pixel-corners-top":"pixel-corners"}`} onClick={()=>setActiveTab(3)}>Contact</div>
                     </div>
-                    <Link to="desktop" style={{color:"white"}}><div className={`desktop-tab home-tab pixel-corners`}>
+                    {/* <Link to="desktop" style={{color:"white"}}><div className={`desktop-tab home-tab pixel-corners`}>
                         <p>Desktop experience</p>
                         <ComputerIcon/>
-                    </div></Link>
+                    </div></Link> */}
                </nav>
                 <main id='home-content' className={activeTab===1 ? "pixel-corners-top-left":`pixel-corners-home`} style={{borderTopLeftRadius: activeTab===1 ?"0":"24px"}}>
                     {activeTab===1 && <HomeTab/>}
                     {activeTab===2 && <ProjectsTab/>}
                     {activeTab===3 && <ContactTab/>}
                 </main>
-                <Footer/>
 
+                <Footer/>
             </div>
             <div id="floatingobjects">
                 {/* Floating objects */}
@@ -49,12 +49,12 @@ export default function Home() {
                     time={15}
                     src="/images/floating_objects/Starfish.png"/>
                 <FloatingObject 
-                    leftx={300} 
+                    leftx={240} 
                     delayTime={-9} 
                     time={15}
                     src="/images/floating_objects/Fishuke.png"/>
                 <FloatingObject 
-                    rightx={300} 
+                    rightx={240} 
                     delayTime={-1} 
                     src="/images/floating_objects/CuteTurtle_color.png"/>
                 <FloatingObject 

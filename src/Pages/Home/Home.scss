@@ -46,6 +46,10 @@
         cursor: pointer;
         padding: var(--size-xxs) var(--size-s);
         margin-bottom: var(--size-s);
+        transition: filter 0.5s;
+        &:hover {
+            filter: brightness(100%);
+        }
     }
     .active-tab {
         filter: brightness(100%);

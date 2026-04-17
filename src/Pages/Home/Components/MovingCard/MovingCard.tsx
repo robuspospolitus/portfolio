@@ -49,8 +49,8 @@ function useHoverMove() {
     };
     const handleMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
-      target.current.x = (e.clientX - rect.width / 2 - rect.left) / 10;
-      target.current.y = (e.clientY - rect.height / 2 - rect.top) / 10;
+      target.current.x = (e.clientX - rect.width / 2 - rect.left) / 15;
+      target.current.y = (e.clientY - rect.height / 2 - rect.top) / 15;
       startAnimation();
     };
     const handleLeave = () => {

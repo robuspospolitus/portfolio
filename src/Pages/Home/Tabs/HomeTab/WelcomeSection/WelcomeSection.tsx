@@ -13,7 +13,7 @@ export default function WelcomeSection({about}:Props) {
         <section className="clear-section">
             <h1 style={{textAlign: "center"}} id='welcome' className='border-bottom-animation'>{about && about[0]}</h1>
             <div className="side-to-side welcome-side-to-side" style={{gap:"48px"}}>
-                <MovingCard style={{padding:0, width: "auto"}} noBorder>
+                <MovingCard style={{padding:0, width: "auto", maxHeight:"300px"}} noBorder>
                     <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
                 </MovingCard>
                 <div className='gap'>

@@ -1,6 +1,10 @@
 footer {
     background: linear-gradient(to bottom, transparent, var(--home-border));
     width: 100%;
+    position: inherit;
+    z-index: 6;
+    color: white;
+    font-size: var(--size);
     #made-with {
         display: flex; 
         gap: var(--size-xs);

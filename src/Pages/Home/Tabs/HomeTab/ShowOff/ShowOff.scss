@@ -4,3 +4,19 @@
         margin-bottom: var(--size);
     }
 }
+
+@media screen and (max-width: 749px) {
+    .moving-cards {
+        .side-to-side {
+            flex-direction: column;
+            margin-bottom: var(--size);
+        }
+        .box-shadow {
+            width: 80% !important;
+        }
+        .icon-and-text { 
+            flex-direction: row;
+        }
+        p {text-align: center;}
+    }
+}

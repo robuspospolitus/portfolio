@@ -26,9 +26,9 @@ export default function ShowOff() {
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <DevicesIcon/>
-                                <h3>Web & Mobile App</h3>
+                                <h3>All devices</h3>
                             </div>
-                            <p>Transforming ideas into exceptional web and mobile app experiences.</p>
+                            <p>Transforming ideas into exceptional web, desktop and mobile app experiences.</p>
                         </div>
                     </MovingCard>
                     <MovingCard style={{width: "33%"}} className="yellow">
@@ -55,9 +55,9 @@ export default function ShowOff() {
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <SettingsIcon/>
-                                <h3>UI & UX</h3>
+                                <h3>Performance & Optimization</h3>
                             </div>
-                            <p>Designing interfaces that are intuitive, efficient, and enjoyable to use.</p>
+                            <p>Ensuring fast, scalable, and high-performing applications that deliver seamless user experiences.</p>
                         </div>
                     </MovingCard>
                 </div>
