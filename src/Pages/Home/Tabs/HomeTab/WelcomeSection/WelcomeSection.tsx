@@ -1,6 +1,7 @@
 import XLogo from '../../../../../assets/Logos/XLogo.tsx';
 import LinkedinLogo from '../../../../../assets/Logos/LinkedinLogo.tsx';
 import GithubLogo from '../../../../../assets/Logos/GitHubLogo.tsx';
+import MovingCard from '../../../Components/MovingCard/MovingCard.tsx';
 import './WelcomeSection.scss';
 
 interface Props{
@@ -12,7 +13,9 @@ export default function WelcomeSection({about}:Props) {
         <section className="clear-section">
             <h1 style={{textAlign: "center"}} id='welcome' className='border-bottom-animation'>{about && about[0]}</h1>
             <div className="side-to-side welcome-side-to-side" style={{gap:"48px"}}>
-                <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
+                <MovingCard style={{padding:0, width: "auto"}} noBorder>
+                    <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
+                </MovingCard>
                 <div className='gap'>
                     <h2>
                         Creating immersive, 

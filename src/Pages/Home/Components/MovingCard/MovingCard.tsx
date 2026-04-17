@@ -4,16 +4,15 @@ import './MovingCard.scss';
 type MovingCardProps = {
     className?: string,
     style?: React.CSSProperties,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    noBorder?: boolean
 }
-export default function MovingCard({className="", style, children}:MovingCardProps) {
+export default function MovingCard({className="", style, children, noBorder=false}:MovingCardProps) {
     const ref = useHoverMove();
     return (
       <div className="box-shadow" style={style}>
-        <div ref={ref} className={`show-off-container pixel-corners ${className}`} >
-          <div className="show-off-container-content pixel-corners">
-            {children}
-          </div>
+        <div ref={ref} className={`show-off-container pixel-corners ${className}`} style={noBorder ? {padding:0} : {}}>
+          {children}
         </div>
       </div>
     )

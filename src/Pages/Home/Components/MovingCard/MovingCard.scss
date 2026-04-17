@@ -5,6 +5,7 @@
     padding: var(--size-xs);
     display: flex;
     align-self: center;
+    box-sizing: border-box;
 }
 .box-shadow {
     background-color: #00000050;
@@ -17,12 +18,14 @@
 
 .show-off-container-content {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: var(--home-color);
     color: white;
     padding: var(--size);
+    box-sizing: border-box;
     .icon-and-text {
         justify-content: center;
         align-items: center;
