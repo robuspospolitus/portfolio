@@ -109,13 +109,12 @@
                         .btn_showmore {
                             width: 90%;
                         }
-                        .btn_repo {
-                            min-width: 70px;
+                        .btn_repo, .btn_website {
+                            min-width: 60px;
                             width: 10%;
-                        }
-                        .btn_website {
-                            min-width: 70px;
-                            width: 10%;
+                            svg {
+                                height: var(--font-size-p);
+                            }
                         }
                     }
                 }

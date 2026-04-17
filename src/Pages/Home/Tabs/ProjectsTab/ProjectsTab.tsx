@@ -3,7 +3,8 @@ import './ProjectsTab.scss';
 import data from '../../../../assets/Data/data.json';
 import '../HomeTab/TechStackTab/TechStackTab.scss';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
-
+import RepoIcon from '../../../../assets/Logos/Repo';
+import GlobeIcon from '../../../../assets/Logos/Globe';
 
 export default function ProjectsTab() {
     const personal = useMemo(() => data.files[1].content && data.files[1].content[0].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id}), [data]);
@@ -91,8 +92,12 @@ function Project({data, onClick}:ProjectProps) {
             </div>
             <div className="buttons-section">
                 <button onClick={()=>onClick((data?.id || 1)-1)} className='btn_showmore pixel-buttons'>Show more!</button>
-                <a href={data?.repository} target='_blank'><button className='btn_repo pixel-buttons'>Repo</button></a>
-                {data?.website && <a href={data?.website} target='_blank'><button className='btn_website pixel-buttons'>WWW</button></a>}
+                <a href={data?.repository} target='_blank'><button className='btn_repo pixel-buttons'>
+                    <RepoIcon/>
+                </button></a>
+                {data?.website && <a href={data?.website} target='_blank'><button className='btn_website pixel-buttons'>
+                    <GlobeIcon/>
+                </button></a>}
             </div>
         </>
     )
