@@ -1,0 +1,12 @@
+.theme-button{
+    width:  var(--font-size-p);
+    height: var(--font-size-p);
+    padding: var(--size-s);
+    background-color: var(--project-color);
+    border: 4px solid var(--project-color);
+    svg {
+        position: absolute;
+        width: var(--font-size-p);
+        height: var(--font-size-p);
+    }
+}

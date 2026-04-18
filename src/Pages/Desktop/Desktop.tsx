@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import File from './Components/File/File';
 import './Desktop.scss';
 import Background from '../../Assets/Images/image.png';
@@ -8,6 +8,16 @@ const folderData = data.files;
 
 function Desktop() {
   const [isGrid] = useState<boolean>(true);
+  const [,setCurrentTheme] = useState<string>(localStorage.getItem("theme") || "dark");
+   
+  const changeTheme = () => {
+    setCurrentTheme("dark")
+    localStorage.setItem("theme", "dark");
+    document.body.className = `dark-theme`;
+  }
+  useEffect(() => {
+    changeTheme();
+  }, [])
   
   return (
     <>

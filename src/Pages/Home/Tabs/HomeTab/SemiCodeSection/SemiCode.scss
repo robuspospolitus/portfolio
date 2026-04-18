@@ -7,7 +7,7 @@
     }
 }
 .text-animation {
-    background-image: linear-gradient(to right, white, var(--primary), var(--primary), white);
+    background-image: linear-gradient(to right, var(--font-color-fullsection), var(--primary), var(--primary), var(--font-color-fullsection));
     background-size: 200% auto;
     background-clip: text;
     -webkit-background-clip: text;

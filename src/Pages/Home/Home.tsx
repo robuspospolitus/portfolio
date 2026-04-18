@@ -8,10 +8,12 @@ import Footer from './Components/Footer/Footer';
 import FloatingObject from './Components/FloatingObject/FloatingObject';
 import '../../styles/pixel-corners.scss';
 import './Home.scss';
+import ThemeButton from './Components/ThemeButton/ThemeButton';
 // import ComputerIcon from '../../assets/Logos/Computer';
 
 export default function Home() {
     const [activeTab, setActiveTab] = useState(1);
+    document.body.className = `${localStorage.getItem("theme") || "dark"}-theme`;
 
     return (
         <>
@@ -66,6 +68,9 @@ export default function Home() {
                     rightx={0} 
                     delayTime={-5} 
                     src="/images/floating_objects/KissFish.png"/>
+            </div>
+            <div className="fixed-buttons">
+                <ThemeButton/>
             </div>
         </>
     )

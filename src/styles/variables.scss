@@ -23,6 +23,7 @@
     --green-opacity: rgba(18, 143, 74, 0.8);
     --orange: rgba(252, 148, 123);
     --orange-opacity: rgba(252, 148, 123, 0.8);
+    
 }
 
 .light-theme {
@@ -33,8 +34,36 @@
     --background-grayscale: 20%;
     --file-active-background-color: rgba(224, 224, 224, 0.4);
     --file-active-title-color: black;
+
+    // HOME
+    --home-background-brightness: 100%;
+    --home-color: rgba(0, 0, 0, 0.3);
+    --home-border: rgb(72, 136, 138);
+    .full-section { --primary: rgb(31, 115, 126); }
+    --primary: rgb(71, 180, 175);
+    --font-color-clearsection: white;
+    --font-color-fullsection: rgb(11, 44, 59);
+    --black-opacity: rgba(0, 0, 0, 0.3);
+    --project-color: rgba(219, 219, 219, 0.6);
+    // 6, 30, 46 // NIEBIESKI
+}
+.dark-theme {
+    --item-color: #fff;
+    --modal-color: rgba(204, 220, 255, 0.8);
+    --modal-background-color: rgba(255, 255, 255, 0.9);
+    --background-brightness: 90%;
+    --background-grayscale: 20%;
+    --file-active-background-color: rgba(224, 224, 224, 0.4);
+    --file-active-title-color: black;
+
+    // HOME
+    --home-background-brightness: 50%;
     --home-color: rgba(0, 0, 0, 0.6);
     --home-border: rgb(0, 24, 11);
     --primary: rgb(31, 104, 126);
+    --font-color-clearsection: white;
+    --font-color-fullsection: white;
+    --black-opacity: rgba(0, 0, 0, 0.6);
+    --project-color: rgba(0, 0, 0, 0.6);
     // 6, 30, 46 // NIEBIESKI
 }

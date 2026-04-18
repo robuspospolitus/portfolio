@@ -17,7 +17,7 @@ section {
             font-size: var(--font-size-xl);
             line-height: var(--font-size-xl);
             font-weight: bold;
-            background-image: linear-gradient(to right, white, var(--primary));
+            background-image: linear-gradient(to right, var(--font-color-clearsection), var(--primary));
             color: transparent;
             background-clip: text;
             // background-size: 200% auto;
@@ -37,15 +37,27 @@ section {
 }
 
 .clear-section {
+    color: var(--font-color-clearsection);
     #prof-pic {
         width: 300px;
     }
+    
 }
 .full-section {
+    color: var(--font-color-fullsection);
     box-shadow: inset 0 0 12px black;
     min-height: var(--size-xl);
     background-color: var(--home-border);
     padding: var(--size);
+    .border-bottom-animation {
+        border-bottom: 2px solid transparent;
+        transition: border 0.1s;
+        box-sizing: border-box;
+        font-weight: 100;
+        &:hover {
+            border-bottom: 2px solid var(--font-color-fullsection) !important;
+        }
+    }
 }
 .side-to-side {
     display: flex;
@@ -60,11 +72,11 @@ section {
     }
 }
 .border-bottom-animation {
-    border: 0 solid white;
-    transition: border 0.1s;
-    box-sizing: border-box;
-    font-weight: 100;
-    &:hover {
-        border-bottom: 2px solid white !important;
+        border-bottom: 2px solid transparent;
+        transition: border 0.1s;
+        box-sizing: border-box;
+        font-weight: 100;
+        &:hover {
+            border-bottom: 2px solid white !important;
+        }
     }
-}

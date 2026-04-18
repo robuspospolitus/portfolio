@@ -7,7 +7,6 @@ import './styles/variables.scss'
 import './styles/styles.scss'
 
 createRoot(document.getElementById('root')!).render(
-    <div className='light-theme'>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -15,5 +14,4 @@ createRoot(document.getElementById('root')!).render(
         <Route path='*' element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
-    </div>
 )

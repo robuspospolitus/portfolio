@@ -18,7 +18,7 @@ export default function SemiCodeSection() {
                     <h3 className="text-animation">Mastering the craft</h3>
                 </div>
                 <div className="gap" style={{width: "40%", textAlign:"right"}}>
-                    <p className="color-hover" style={{fontSize: "32px", color: "white"}}>2nd-semester Computer Engineering student. </p>
+                    <p className="color-hover" style={{fontSize: "32px", color: "var(--font-color-fullsection)"}}>2nd-semester Computer Engineering student. </p>
                     <p style={{fontSize: "24px"}}>I'm 20 years old and have been actively developing as a front-end developer for the past few years using React. </p>
                 </div>
             </div>

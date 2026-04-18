@@ -6,7 +6,7 @@
     image-rendering: pixelated;
     object-position: 50% 50%;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(var(--home-background-brightness));
 }
 #home {
     position: absolute;
@@ -14,7 +14,7 @@
     height: 100%;
     padding: var(--size-s) 0 0 0;
     box-sizing: border-box;
-    color: white;
+    color: var(--font-color-clearsection);
     font-size: var(--size);
     overflow-y: auto;
     scrollbar-width: none;
@@ -27,6 +27,7 @@
     margin: auto;
     position: relative;
     z-index: 2;
+    color: var(--font-color-fullsection);
     .normal-tabs {
         display: flex;
         width: 100%;
@@ -105,7 +106,12 @@
     max-width: 100vw;
     overflow: hidden;
 }
-
+.fixed-buttons {
+    position: fixed;
+    z-index: 20;
+    bottom: var(--size-s);
+    right: var(--size-s);
+}
 @media screen and (max-width: 860px) {
     #home{
         padding-left: var(--margin);

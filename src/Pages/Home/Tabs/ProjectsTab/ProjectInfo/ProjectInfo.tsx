@@ -34,7 +34,7 @@ export default function ProjectInfo({data, onClick}:ProjectProps) {
             )}
 
             {/* Tech Stack */}
-            <h3>Tech stack</h3>
+            <h3 className='border-bottom-animation'>Tech stack</h3>
             <p>Key technologies used in this app:</p>
             <ul>
                 {data.stack?.words?.length ? data.stack?.words?.map((stack, key) => (
