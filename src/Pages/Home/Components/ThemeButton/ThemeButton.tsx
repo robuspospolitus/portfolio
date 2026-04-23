@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SunIcon from '../../../../assets/Logos/Sun';
-import MoonIcon from '../../../../assets/Logos/Moon';
+import SunIcon from '../../../../assets/Logos/Sun.tsx';
+import MoonIcon from '../../../../assets/Logos/Moon.tsx';
 import './ThemeButton.scss';
 
 export default function ThemeButton() {
