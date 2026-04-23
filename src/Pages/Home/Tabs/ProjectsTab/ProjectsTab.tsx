@@ -1,10 +1,10 @@
 import { useRef, useState, useMemo } from 'react';
 import './ProjectsTab.scss';
-import data from '../../../../assets/Data/data.json';
+import data from '../../../../Assets/Data/data.json';
 import '../HomeTab/TechStackTab/TechStackTab.scss';
 import ProjectInfo from './ProjectInfo/ProjectInfo';
-import RepoIcon from '../../../../assets/Logos/Repo';
-import GlobeIcon from '../../../../assets/Logos/Globe';
+import RepoIcon from '../../../../Assets/Logos/Repo';
+import GlobeIcon from '../../../../Assets/Logos/Globe';
 
 export default function ProjectsTab() {
     const personal = useMemo(() => data.files[1].content && data.files[1].content[0].content?.filter((file) => file.type === "project").sort((a, b) => {return a.id-b.id}), [data]);

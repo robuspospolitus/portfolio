@@ -2,10 +2,10 @@ import './ContactTab.scss';
 import '../HomeTab/HomeTab.scss';
 import SocialSlide from './SocialSlide/SocialSlide';
 import { useEffect, useState, type CSSProperties } from 'react';
-import GithubLogo from '../../../../assets/Logos/GitHubLogo';
-import LinkedinLogo from '../../../../assets/Logos/LinkedinLogo';
-import XLogo from '../../../../assets/Logos/XLogo';
-import MailLogo from '../../../../assets/Logos/Mail';
+import GithubLogo from '../../../../Assets/Logos/GitHubLogo';
+import LinkedinLogo from '../../../../Assets/Logos/LinkedinLogo';
+import XLogo from '../../../../Assets/Logos/XLogo';
+import MailLogo from '../../../../Assets/Logos/Mail';
 import ContactForm from './ContactForm/ContactForm';
 
 export default function ContactTab() {

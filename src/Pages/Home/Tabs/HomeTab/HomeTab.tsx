@@ -4,7 +4,7 @@ import SemiCodeSection from './SemiCodeSection/SemiCode';
 import ShowOff from './ShowOff/ShowOff';
 import TechStackTab from './TechStackTab/TechStackTab';
 //import ExperienceSection from './ExperienceSection/ExperienceSection';
-import data from '../../../../assets/Data/data.json';
+import data from '../../../../Assets/Data/data.json';
 const about = data.files[0].text;
 
 export default function HomeTab() {

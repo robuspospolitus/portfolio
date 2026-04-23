@@ -1,6 +1,6 @@
-import XLogo from '../../../../../assets/Logos/XLogo.tsx';
-import LinkedinLogo from '../../../../../assets/Logos/LinkedinLogo.tsx';
-import GithubLogo from '../../../../../assets/Logos/GitHubLogo.tsx';
+import XLogo from '../../../../../Assets/Logos/XLogo.tsx';
+import LinkedinLogo from '../../../../../Assets/Logos/LinkedinLogo.tsx';
+import GithubLogo from '../../../../../Assets/Logos/GitHubLogo.tsx';
 import MovingCard from '../../../Components/MovingCard/MovingCard.tsx';
 import './WelcomeSection.scss';
 
