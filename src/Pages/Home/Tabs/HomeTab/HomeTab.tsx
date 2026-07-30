@@ -11,11 +11,15 @@ export default function HomeTab() {
     console.log(about);
     return (
         <>  
-            {about && <WelcomeSection about={about}/> }
-            {/* <ExperienceSection/> */}
-            <SemiCodeSection/>
-            <ShowOff/>
-            <TechStackTab/>
+            <div className='side-to-side-home first-home' style={{alignItems:"center"}}>
+                {about && <WelcomeSection about={about} /> }
+                {/* <ExperienceSection/> */}
+                <SemiCodeSection/>
+            </div>
+            <div className='side-to-side-home second-home'>
+                <ShowOff/>
+                <TechStackTab/>
+            </div>
         </>
     )
 }

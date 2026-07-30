@@ -1,5 +1,4 @@
-#background {
-    position: fixed;
+body {
     width: 100%;
     height: 100%;
     background-image: url('../../Assets/Images/day.png');
@@ -8,50 +7,51 @@
     background-repeat: no-repeat;
     background-size: cover;
     image-rendering: pixelated;
-    z-index: -1;
+}
+.dark-theme {
+    background-image: url('../../Assets/Images/night.png');
 }
 
 #home {
     width: 100%;
-    height: 100%;
     padding: var(--size-s) 0 0 0;
     box-sizing: border-box;
     color: var(--font-color-clearsection);
     font-size: var(--size);
-}
-.dark-theme {
-    #background {
-        background-image: url('../../Assets/Images/night.png');
-    }
+    display: flex;
+    justify-content: center;
 }
 
 #home-tabs {
+    position: fixed;
+    left: 0;
+    height: calc(100% - 80px);
     display: flex;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    position: relative;
+    margin: var(--size-s);
     z-index: 2;
     color: var(--font-color-fullsection);
+    background: radial-gradient(transparent, var(--home-color));
+    padding: var(--size-xs);
+    border: var(--size-xs) solid var(--home-border);
     .normal-tabs {
-        display: flex;
         width: 100%;
         max-width: 1000px;
-        margin: auto;
         gap: var(--size-xxs);
         position: relative;
-        z-index: 2;
     }
     .home-tab {
-        width: 100px;
+        display: block;
+        width: var(--size-l);
+        height: var(--size-l);
         background-color: var(--home-border);
         border: var(--size-xs) solid var(--home-border);
         text-align: center;
-        border-radius: var(--size);
         filter: brightness(50%);
         cursor: pointer;
-        padding: var(--size-xxs) var(--size-s);
+        padding: var(--size-xs) var(--size-xs);
         margin-bottom: var(--size-s);
+        justify-content: center;
+        align-items: center;
         transition: filter 0.5s;
         &:hover {
             filter: brightness(100%);
@@ -59,9 +59,6 @@
     }
     .active-tab {
         filter: brightness(100%);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        margin-bottom: 0;
         transition: color 0.5s;
         &:hover {
             color: var(--primary);
@@ -89,28 +86,25 @@
     }
 }
 #home-content {
-    width: 100%;
-    max-width: 1000px;
     overflow: hidden;
-    margin: auto;
-    background-color: var(--home-color);
+    margin: var(--size-s);
+    margin-left: 136px;
+    background: radial-gradient(transparent, var(--home-color));
     box-sizing: border-box;
-    border: var(--size-xs) solid var(--home-border);
     position: relative;
-    top: -8px;
     z-index: 1;
     backdrop-filter: blur(3px);
+    border: var(--size-xs) solid var(--home-border);
 }
 #floatingobjects {
-    position: absolute;
-    width: 100%;
     height: 100%;
-    z-index: -1;
+    width: 100%;
     top: 0;
     left: 0;
     box-sizing: border-box;
     position: fixed;
     overflow: hidden;
+    z-index: -1;
 }
 .fixed-buttons {
     position: fixed;
@@ -147,6 +141,48 @@
         }
     }
 }
+
+// Layout more accessible for mobile devices ;D
+@media screen and (max-width: 768px) {
+    #home {
+        flex-direction: column;
+        #home-tabs {
+            position: relative;
+            margin-bottom: 0;
+            border: 0;
+            background: none;
+            height: auto;
+            padding: 0;
+        }
+        .normal-tabs {
+            display: flex;
+            margin: auto;
+            gap: var(--size-xxs);
+            position: relative;
+            .home-tab {
+                border: var(--size-xs) solid var(--home-border);
+                text-align: center;
+                margin-bottom: var(--size-s);
+            }
+            .active-tab {
+                height: auto;
+                margin-bottom: 0;
+            }
+        }
+    }
+    #home-content {
+        margin-top: 0;
+        margin-left: var(--size-s);
+    }
+}
+@media screen and (max-width: 600px) {
+    #home-tabs, #home-content {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+// Animations
 @keyframes gradient {
     to { background-position: 200% center; }
 }

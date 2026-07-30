@@ -12,8 +12,7 @@ export default function ShowOff() {
         <section className="clear-section">
             <h2 className='border-bottom-animation' style={{maxHeight: "52px"}}>WHAT I DO</h2>
             <div className="moving-cards">
-                <div className="side-to-side" style={{width: "100%", gap:"24px"}}>
-                    <MovingCard style={{width: "33%"}} className="pink">
+                 <MovingCard className="pink">
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <ArtsIcon/>
@@ -22,7 +21,7 @@ export default function ShowOff() {
                             <p>Designing interfaces that are intuitive, efficient, and enjoyable to use.</p>
                         </div>
                     </MovingCard>
-                    <MovingCard style={{width: "33%"}} className="blue">
+                    <MovingCard className="blue">
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <DevicesIcon/>
@@ -31,7 +30,7 @@ export default function ShowOff() {
                             <p>Transforming ideas into exceptional web, desktop and mobile app experiences.</p>
                         </div>
                     </MovingCard>
-                    <MovingCard style={{width: "33%"}} className="yellow">
+                    <MovingCard className="yellow">
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <BulbIcon/>
@@ -40,9 +39,7 @@ export default function ShowOff() {
                             <p>Crafting visually stunning design that connects deeply with your audience.</p>
                         </div>
                     </MovingCard>
-                </div>
-                <div className="side-to-side" style={{width: "100%", gap:"24px"}}>
-                    <MovingCard style={{width: "40%"}} className="green">
+                <MovingCard className="green">
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <StonksIcon/>
@@ -51,7 +48,7 @@ export default function ShowOff() {
                             <p>Bringing your vison to life with the latest technology and design trends.</p>
                         </div>
                     </MovingCard>
-                    <MovingCard style={{width: "60%"}} className="orange">
+                    <MovingCard className="orange">
                         <div className="show-off-container-content pixel-corners">
                             <div className="icon-and-text side-to-side">
                                 <SettingsIcon/>
@@ -60,7 +57,6 @@ export default function ShowOff() {
                             <p>Ensuring fast, scalable, and high-performing applications that deliver seamless user experiences.</p>
                         </div>
                     </MovingCard>
-                </div>
             </div>
         </section>
     )

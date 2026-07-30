@@ -4,7 +4,7 @@ import {useEffect, useState, type CSSProperties} from "react";
 
 export default function SemiCodeSection() {
     return (
-        <section className="full-section">
+        <section className="full-section pixel-corners">
             <div className="side-to-side" style={{width: "100%", alignItems:"start"}}>
                 <div className="gap semi-code" style={{width: "60%"}}>
                     <WrittenCode text='<div id="promo">'/>

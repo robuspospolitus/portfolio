@@ -3,7 +3,7 @@ import './TechStackTab.scss';
 export default function TechStackTab() {
     
     return (
-        <section className="full-section tech-stack-tab">
+        <section className="full-section tech-stack-tab pixel-corners">
             <h2 className='border-bottom-animation'>My Tech Stack</h2>
             <p>My expertise spans a range of frontend technologies, allowing me to build modern, responsive, and user-friendly interfaces. I focus on clean design, performance, and creating intuitive user experiences.</p>
             <div className="carousel">

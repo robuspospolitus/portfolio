@@ -1,4 +1,6 @@
 .tech-stack-tab {
+    width: 30%;
+    height: fit-content;
     h2 {
         white-space: nowrap;
         text-overflow: clip;
@@ -31,9 +33,14 @@
         display: flex;
         gap: var(--size-s);
         width: max-content;
-        animation: carousel 20s linear infinite;
+        animation: carousel 30s linear infinite;
     }
 @keyframes carousel {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+}
+@media screen and (max-width: 1202px) {
+    .tech-stack-tab {
+        width: 100%;
+    }
 }

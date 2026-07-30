@@ -1,5 +1,10 @@
 .moving-cards {
     gap: var(--size);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1080px;
     .side-to-side {
         margin-bottom: var(--size);
     }

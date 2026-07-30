@@ -11,8 +11,21 @@ interface Props{
 export default function WelcomeSection({about}:Props) {
     return (
         <section className="clear-section">
-            <h1 style={{textAlign: "center"}} id='welcome' className='border-bottom-animation'>{about && about[0]}</h1>
-            <div className="side-to-side welcome-side-to-side" style={{gap:"48px"}}>
+            <div className='side-to-side welcome-side-to-side'>
+                <h1 style={{textAlign: "center"}} id='welcome' className='border-bottom-animation'>{about && about[0]}</h1>
+                <div className="side-to-side logos">
+                    <a href='https://github.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
+                        <GithubLogo/>
+                    </a>
+                    <a href='https://x.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
+                        <XLogo/>
+                    </a>
+                    <a href='https://www.linkedin.com/in/nadia-karolina-gill-3a81a3331/' target='_blank' className='socials-logo color-hover'>
+                        <LinkedinLogo/>
+                    </a>
+                </div>
+            </div>
+            <div className="side-to-side welcome-side-to-side" style={{gap:"24px"}}>
                 <MovingCard style={{padding:0, width: "auto"}} noBorder>
                     <img id='prof-pic' draggable={false} className='pixel-corners' src='images/profile.png' alt='profile picture'/>
                 </MovingCard>
@@ -26,17 +39,6 @@ export default function WelcomeSection({about}:Props) {
                     </h2>
                     <p>Front-end developer</p>
                 </div>
-            </div>
-            <div className='side-to-side' style={{gap:"24px", margin:"24px", justifyContent:"center", alignContent:"center", width:"100%"}}>
-                <a href='https://github.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
-                    <GithubLogo/>
-                </a>
-                <a href='https://x.com/robuspospolitus' target='_blank' className='socials-logo color-hover'>
-                    <XLogo/>
-                </a>
-                <a href='https://www.linkedin.com/in/nadia-karolina-gill-3a81a3331/' target='_blank' className='socials-logo color-hover'>
-                    <LinkedinLogo/>
-                </a>
             </div>
         </section>
     );

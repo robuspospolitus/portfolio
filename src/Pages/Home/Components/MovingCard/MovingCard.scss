@@ -1,17 +1,17 @@
 .show-off-container {
-    min-height: 340px;
-    width: auto;
+    width: fit-content;
     background-color: var(--home-color);
     padding: var(--size-xs);
     display: flex;
     align-self: center;
     box-sizing: border-box;
+    height: 100%;
 }
 .box-shadow {
     background-color: #00000050;
     border-radius: var(--size);
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    flex: 1 250px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
 }
 
@@ -23,7 +23,7 @@
     justify-content: center;
     background-color: var(--black-opacity);
     color: white;
-    padding: var(--size);
+    padding: var(--size-s);
     box-sizing: border-box;
     .icon-and-text {
         justify-content: center;
